@@ -1,3 +1,5 @@
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
 CREATE TABLE Leitor (
     email VARCHAR(100) PRIMARY KEY,
     nome VARCHAR(50),
@@ -19,46 +21,53 @@ CREATE TABLE Livro (
 );
 
 CREATE TABLE Evento (
-    codEvento UUID PRIMARY KEY,
+    codEvento UUID DEFAULT uuid_generate_v4 (),
     hora TIME,
     data DATE,
     descricao TEXT,
     Evento_TIPO INT,
     fk_Leitor_email VARCHAR(100),
     fk_Leitor_email_ VARCHAR(100),
-    fk_Endereco_codEnd UUID
+    fk_Endereco_codEnd UUID,
+    PRIMARY KEY (codEvento)
 );
 
 CREATE TABLE Grupo (
-    codGrupo UUID PRIMARY KEY,
+    codGrupo UUID DEFAULT uuid_generate_v4 (),
     nome VARCHAR(100),
-    fk_Leitor_email VARCHAR(100)
+    fk_Leitor_email VARCHAR(100),
+    PRIMARY KEY (codGrupo)
 );
 
 CREATE TABLE Pais (
-    codPais UUID PRIMARY KEY,
-    nome VARCHAR(100)
+    codPais UUID DEFAULT uuid_generate_v4 (),
+    nome VARCHAR(100),
+    PRIMARY KEY (codPais)
 );
 
 CREATE TABLE Genero (
-    codGenero UUID PRIMARY KEY,
-    nome VARCHAR(100)
+    codGenero UUID DEFAULT uuid_generate_v4 (),
+    nome VARCHAR(100),
+    PRIMARY KEY(codGenero)
 );
 
 CREATE TABLE Tag_Grupo (
-    codTagg UUID PRIMARY KEY,
-    tagg VARCHAR(100)
+    codTagg UUID DEFAULT uuid_generate_v4 (),
+    tagg VARCHAR(100),
+    PRIMARY KEY(codTagg)
 );
 
 CREATE TABLE Lista (
-    codLista UUID PRIMARY KEY,
+    codLista UUID DEFAULT uuid_generate_v4 (),
     nome VARCHAR(100),
-    fk_Leitor_email VARCHAR(100)
+    fk_Leitor_email VARCHAR(100),
+    PRIMARY KEY(codLista)
 );
 
 CREATE TABLE Tag_Lista (
-    codTagl UUID PRIMARY KEY,
-    tagl VARCHAR(100)
+    codTagl UUID DEFAULT uuid_generate_v4 (),
+    tagl VARCHAR(100),
+    PRIMARY KEY(codTagl)
 );
 
 CREATE TABLE Mensagem_PARTICIPA (
@@ -67,7 +76,8 @@ CREATE TABLE Mensagem_PARTICIPA (
 );
 
 CREATE TABLE Post (
-    codPost UUID PRIMARY KEY
+    codPost UUID DEFAULT uuid_generate_v4 (),
+    PRIMARY KEY (codPost)
 );
 
 CREATE TABLE Endereco (
@@ -75,13 +85,15 @@ CREATE TABLE Endereco (
     rua VARCHAR(100),
     bairro VARCHAR(100),
     nmrEstabelecimento INTEGER,
-    codEnd UUID PRIMARY KEY,
-    fk_Pais_codPais UUID
+    codEnd UUID DEFAULT uuid_generate_v4 (),
+    fk_Pais_codPais UUID,
+    PRIMARY KEY (codEnd)
 );
 
 CREATE TABLE formato (
-    formato_PK UUID NOT NULL PRIMARY KEY,
-    formato VARCHAR(20)
+    formato_PK UUID DEFAULT uuid_generate_v4 (),
+    formato VARCHAR(20),
+    PRIMARY KEY(formato_PK)
 );
 
 CREATE TABLE AMIZADE (
