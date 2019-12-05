@@ -7,5 +7,9 @@ GC = client.GoodreadsClient(KEY, SECRET)
 
 BOOK = GC.book(12)
 
+print(BOOK.isbn)
 print(BOOK.title)
-print(BOOK.authors)
+print(BOOK.description)
+print(BOOK.num_pages)
+print(BOOK.publication_date)
+print(BOOK.image_url)

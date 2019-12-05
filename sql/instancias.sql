@@ -7,6 +7,7 @@ INSERT INTO leitor(email, nome, senha, sexo, nascimento, Leitor_TIPO, fk_Pais_co
 VALUES 
 ('pfrodrigues@inf.ufrgs.br', 'Pablo Rodrigues', '123456NuncaVaoAdivinhar', 'M', '1998-06-05', 0, 'e4de6545-4d2c-4bbf-a30e-4c2e2958dd97'),
 ('avccamargo@inf.ufrgs.br', 'Arthur Camargo', '123456', 'M', '1998-02-24', 0, 'e4de6545-4d2c-4bbf-a30e-4c2e2958dd97');  
+
 INSERT INTO livro(isbn, titulo, descr, nmrPag, anoPublic, imagem)
 VALUES('0545010225', 'harry potter', 'harry potter duh...', 120, '1998-02-01', '/usr/Imagens/HarryPotter/harry.png');
 
