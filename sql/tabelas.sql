@@ -16,7 +16,7 @@ CREATE TABLE Livro (
     nmrPag INTEGER,
     fk_formato_formato_PK serial,
     anoPublic DATE,
-    imagem VARCHAR(100)
+    imagem VARCHAR(200)
 );
 
 CREATE TABLE Evento (
