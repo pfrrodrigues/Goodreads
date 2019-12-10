@@ -56,6 +56,22 @@ def login():
             break
 
 
+def country_def(name):
+    initial = (input("Com que letra comeca seu pais de origem, " + name + "?: ")).upper()
+    print(initial+'%')
+    cur.execute("SELECT codpais, nome FROM pais WHERE nome like %s;", (initial+'%',))
+    countries = cur.fetchall()
+
+    if countries:
+        for country in countries:
+            print("code: [" + str(country[0]) + "]  country: " + country[1])
+        cod = input("Informe o codigo do seu pais de origem: ")
+    else:
+        print("Desculpe, nao temos o codigo do seu pais, " + name + ". Iremos averiguar.")
+        # apenas temporario
+        cod = '1'
+    return cod
+
 #
 def create_account():
 
@@ -65,6 +81,7 @@ def create_account():
     email_processing = True
 
     while email_processing:
+        name = (input("Nome: ")).title()
         email = input("Email: ")
 
         cur.execute("SELECT email FROM Leitor WHERE email=%s;", (email,))
@@ -74,6 +91,38 @@ def create_account():
             print("Conta com este email ja existe. Por favor, forneca outro email de sua escolha.")
         else:
             email_processing = False
+
+    # inicialmente sem validação, eventualmente iremos validar.
+    password = input("Senha: ")
+
+    processing_sex = True
+    while(processing_sex):
+        sexo = (input("Sexo: F/f - Feminino     M/m - Masculino: ")).upper()
+
+        if sexo == 'F':
+            processing_sex=False
+        elif sexo == 'M':
+            processing_sex=False
+        else:
+            print("Entrada invalida. Por favor, insira novamente um sexo valido.")
+
+    nasc = input("Informe a data do seu nascimento(YYYY-MM-DD): ")
+
+    country = country_def(name)
+
+    cur.execute("INSERT INTO Leitor VALUES(%s, %s, %s, %s, %s,'1', %s);",(email, name, password,sexo,nasc,country,))
+    conn.commit()
+    cur.execute("SELECT email FROM Leitor where email = %s", (email,))
+    check = cur.fetchone()
+
+    if check:
+        print("Parabens! Seu cadastro foi efetuado com sucesso.")
+    else:
+        print("Desculpe, houve um erro ao cadastrar a sua conta.")
+
+
+
+
 
 
 # Validate the options
