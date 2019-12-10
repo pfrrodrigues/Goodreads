@@ -12,7 +12,7 @@
 #  Create Date: 05.12.2019
 #
 #  Last Modified Date:
-#       05.12.2019
+#       09.12.2019
 #
 #  Additional Comments:
 ##############################################################################
@@ -28,23 +28,20 @@ conn = psycopg2.connect(host='127.0.0.1',
 cur = conn.cursor()
 
 # Check user password
-def passwordcheck(user_data):
+def passwordcheck(user_data, email, passwd):
 
-    if user_data:
-        while passwd != user_data[2]:
-            passwd = input("Senha invalida. Por favor, insira novamente sua senha: ")
+    while passwd != user_data[2]:
+        passwd = input("Senha invalida. Por favor, insira novamente sua senha: ")
 
-            cur.execute("SELECT email, nome, senha FROM leitor WHERE email = %s;", (email,));
-            query = cur.fetchone()
+        cur.execute("SELECT email, nome, senha FROM leitor WHERE email = %s;", (email,));
+        query = cur.fetchone()
 
-        print('Bem-vindo, '+ query[1] + '.')
-        break
-    else:
-        os.system('clear')
-        print("Email invalido. Por favor, insira novamente seu email.")
+    print('Bem-vindo, '+ user_data[1] + '.')
+
+
 
 # Implement user login
-def loggin():
+def login():
 
     while (True):
         email = input("email: ")
@@ -52,7 +49,32 @@ def loggin():
         cur.execute("SELECT email, nome, senha FROM leitor WHERE email = %s;", (email,));
         user_data = cur.fetchone()
 
-        passwordcheck(user_data)
+        if not user_data:
+            print("Email invalido. Por favor, insira novamente seu email.")
+        else:
+            passwordcheck(user_data, email, passwd)
+            break
+
+
+#
+def create_account():
+
+    os.system('clear')
+    print("CADASTRO")
+
+    email_processing = True
+
+    while email_processing:
+        email = input("Email: ")
+
+        cur.execute("SELECT email FROM Leitor WHERE email=%s;", (email,))
+        list_of_emails = cur.fetchone()
+
+        if list_of_emails is not None:
+            print("Conta com este email ja existe. Por favor, forneca outro email de sua escolha.")
+        else:
+            email_processing = False
+
 
 # Validate the options
 def option_ok(user_input):
@@ -73,7 +95,7 @@ def exibition():
             print("Insira uma opcao válida.")
 
     if (user_input) == '1':
-        loggin()
+        login()
     else:
         create_account()
 
