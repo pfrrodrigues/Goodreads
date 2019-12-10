@@ -1,12 +1,13 @@
-ARRUMAR FORMATAÇÃO!
+ARRUMAR FORMATAÇÃO! ✓
 
-.exclusão de "Nome" no início
+.exclusão de "Nome" no início ✓
 
-."Desta maneira o principal alvo da SI" seria "...do SI" em OBJETIVO GERAL
+."Desta maneira o principal alvo da SI" seria "...do SI" em OBJETIVO GERAL ✓
 
-."diversas sobre livro" seria "...livros"
+."diversas sobre livro" seria "...livros" ✓
 
-."...e tem seu foco em usuário que gostam de ler" seria "usuários" em APLICABILIDADE
+."...e tem seu foco em usuário que gostam de ler" seria "usuários" em APLICABILIDADE ✓
 
 ."servir para catálogoção de livros e mídias semelhantes."
-não seria melhor, "servir para catalogação de livros em diversos formatos"?
+não seria melhor, "servir para catalogação de livros em diversos formatos"? ✓
+@Arthur "Faz mais sentido mesmo" 
