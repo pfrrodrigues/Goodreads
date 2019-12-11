@@ -139,7 +139,7 @@ INSERT INTO Leitor VALUES('noraroberts@email.com', 'Nora Roberts','noraroberts',
 INSERT INTO Leitor VALUES('margaretat@email.com', 'Margaret Atwood','margofmargot?', 'F', '1939-11-18', 0, 19);
 INSERT INTO Leitor VALUES('ray@email.com','Ray Bradbury','isitastrongpasswd?','M', '1920-07-22',0,79);
 INSERT INTO Leitor VALUES('erinm@email.com', 'Erin Morgenstern', 'whoami?', 'F', '1978-07-08', 0, 79);
-INSERT INTO Leitor VALUES('jk@email.com', 'J. K. Rowling', 'wingardiumLeviosa', 'F', '1965-07-31', 0, 93);
+INSERT INTO Leitor VALUES('jk@email.com', 'J. K. Rowling', 'wingardiumLeviosa', 'F', '1965-07-31', 0, 14);
 INSERT INTO Leitor VALUES('cs@email.com', 'Carl Sagan', 'iloveanndruyan', 'M', '1934-11-09', 0, 79);
 INSERT INTO Leitor VALUES('cixin@email.com', 'Cixin Liu', 'dongfangyanxu', 'M', '1963-06-23', 0, 22);
 

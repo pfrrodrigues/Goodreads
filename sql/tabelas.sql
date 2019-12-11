@@ -19,6 +19,13 @@ CREATE TABLE Livro (
     imagem VARCHAR(200)
 );
 
+CREATE TABLE LEITURA (
+    FK_Leitor_email VARCHAR(100),
+    FK_Livro_ISBN CHAR(10),
+    tipo CHAR(1),
+    classificacao CHAR(1)
+);
+
 CREATE TABLE Evento (
     codEvento SERIAL,
     hora TIME,
@@ -100,12 +107,6 @@ CREATE TABLE AMIZADE (
     FK_Leitor_email_ VARCHAR(100)
 );
 
-CREATE TABLE LEITURA (
-    FK_Leitor_email VARCHAR(100),
-    FK_Livro_ISBN CHAR(10),
-    tipo CHAR(1),
-    classificacao CHAR(1)
-);
 
 CREATE TABLE ESCRITA (
     FK_Leitor_email VARCHAR(100),

@@ -23,13 +23,12 @@ import os
 conn = psycopg2.connect(host='127.0.0.1',
                         password='12345',
                         user='postgres',
-                        dbname='actual')
+                        dbname='test-goodreads')
 # Create a cursor
 cur = conn.cursor()
 
 # Check user password
 def passwordcheck(user_data, email, passwd):
-
     while passwd != user_data[2]:
         passwd = input("Senha invalida. Por favor, insira novamente sua senha: ")
 
@@ -38,11 +37,8 @@ def passwordcheck(user_data, email, passwd):
 
     print('Bem-vindo, '+ user_data[1] + '.')
 
-
-
 # Implement user login
 def login():
-
     while (True):
         email = input("email: ")
         passwd = input("password: ")
@@ -74,7 +70,6 @@ def country_def(name):
 
 #
 def create_account():
-
     os.system('clear')
     print("CADASTRO")
 
@@ -120,14 +115,8 @@ def create_account():
     else:
         print("Desculpe, houve um erro ao cadastrar a sua conta.")
 
-
-
-
-
-
 # Validate the options
 def option_ok(user_input):
-
     if user_input != '1' and user_input != '2':
         return False
     else:
@@ -148,16 +137,7 @@ def exibition():
     else:
         create_account()
 
-
 exibition()
-
-
-
-
-
-
-
-
 
 # Make changes in database
 # conn.commit()
