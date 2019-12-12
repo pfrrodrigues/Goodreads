@@ -1,9 +1,9 @@
  -- Consultas no banco de dados :
 -- Minímo:
--- 2 devem usar GROUP BY e uma deve ter HAVING junto
--- 2 devem ter subconsultas (sem malandrar)
+-- 2 devem usar GROUP BY e uma deve ter HAVING junto ✓, ✓
+-- 2 devem ter subconsultas (sem malandrar) ✓
 -- 1 deve usar o NOT EXIST
--- 2 devem utilizar a visão que criarmos
+-- 2 devem utilizar a visão que criarmos ✓, ✓
 
 -- IDEIAS:
 

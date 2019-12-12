@@ -1,15 +1,15 @@
 
 -- Instancias de formato
-INSERT INTO formato(formato) VALUES('Paperback');
-INSERT INTO formato(formato) VALUES('Hardcover');
-INSERT INTO formato(formato) VALUES('Leather Bound');
-INSERT INTO formato(formato) VALUES('Audio CD');
-INSERT INTO formato(formato) VALUES('Paper');
-INSERT INTO formato(formato) VALUES('Library Binding');
-INSERT INTO formato(formato) VALUES('Audiobook');
-INSERT INTO formato(formato) VALUES('Kindle');
+INSERT INTO Formato(formato) VALUES('Paperback');
+INSERT INTO Formato(formato) VALUES('Hardcover');
+INSERT INTO Formato(formato) VALUES('Leather Bound');
+INSERT INTO Formato(formato) VALUES('Audio CD');
+INSERT INTO Formato(formato) VALUES('Paper');
+INSERT INTO Formato(formato) VALUES('Library Binding');
+INSERT INTO Formato(formato) VALUES('Audiobook');
+INSERT INTO Formato(formato) VALUES('Kindle');
 
--- instances of Livros
+-- Instancias de Livro
 INSERT INTO Livro VALUES('1982110562','The Institute: A Novel', '...', 544, 1, '2019-09-10',
 'http://www.stephenking.com.br/wp-content/uploads/2019/02/theinstitute.jpg?w=640');
 
@@ -164,53 +164,91 @@ INSERT INTO Genero(nome) VALUES('Self-Help');
 INSERT INTO Genero(nome) VALUES('Religion and Spirituality');
 INSERT INTO Genero(nome) VALUES('Computers & Technology');
 
--- Instancias de ESCRITA
-INSERT INTO ESCRITA VALUES('stephenking@email.com','1982110562');
-INSERT INTO ESCRITA VALUES('noraroberts@email.com','125025809X');
-INSERT INTO ESCRITA VALUES('margaretat@email.com','038549081X');
-INSERT INTO ESCRITA VALUES('ray@email.com','1451673310');
-INSERT INTO ESCRITA VALUES('erinm@email.com','0307744434');
-INSERT INTO ESCRITA VALUES('jk@email.com','1408855690');
-INSERT INTO ESCRITA VALUES('jk@email.com','0545010225');
-INSERT INTO ESCRITA VALUES('cs@email.com','0375508325');
-INSERT INTO ESCRITA VALUES('cixin@email.com','7536693966');
+-- Instancias de escrita
+INSERT INTO Escrita VALUES('stephenking@email.com','1982110562');
+INSERT INTO Escrita VALUES('noraroberts@email.com','125025809X');
+INSERT INTO Escrita VALUES('margaretat@email.com','038549081X');
+INSERT INTO Escrita VALUES('ray@email.com','1451673310');
+INSERT INTO Escrita VALUES('erinm@email.com','0307744434');
+INSERT INTO Escrita VALUES('jk@email.com','1408855690');
+INSERT INTO Escrita VALUES('jk@email.com','0545010225');
+INSERT INTO Escrita VALUES('cs@email.com','0375508325');
+INSERT INTO Escrita VALUES('cixin@email.com','7536693966');
 
--- Instancias de POSSE_GENERO
-INSERT INTO POSSE_GENERO VALUES('1982110562', 4);
-INSERT INTO POSSE_GENERO VALUES('1982110562', 7);
-INSERT INTO POSSE_GENERO VALUES('1982110562', 8);
-INSERT INTO POSSE_GENERO VALUES('125025809X', 1);
-INSERT INTO POSSE_GENERO VALUES('125025809X', 2);
-INSERT INTO POSSE_GENERO VALUES('125025809X', 3);
-INSERT INTO POSSE_GENERO VALUES('125025809X', 4);
-INSERT INTO POSSE_GENERO VALUES('038549081X', 3);
-INSERT INTO POSSE_GENERO VALUES('1451673310', 3);
-INSERT INTO POSSE_GENERO VALUES('1451673310', 6);
-INSERT INTO POSSE_GENERO VALUES('0307744434', 1);
-INSERT INTO POSSE_GENERO VALUES('1408855690', 1);
-INSERT INTO POSSE_GENERO VALUES('1408855690', 14);
-INSERT INTO POSSE_GENERO VALUES('0545010225', 1);
-INSERT INTO POSSE_GENERO VALUES('0545010225', 14);
-INSERT INTO POSSE_GENERO VALUES('0375508325', 17);
-INSERT INTO POSSE_GENERO VALUES('7536693966', 3);
-INSERT INTO POSSE_GENERO VALUES('7536693966', 6);
+-- InstanciaS de posse_genero
+INSERT INTO Posse_genero VALUES('1982110562', 4);
+INSERT INTO Posse_genero VALUES('1982110562', 7);
+INSERT INTO Posse_genero VALUES('1982110562', 8);
+INSERT INTO Posse_genero VALUES('125025809X', 1);
+INSERT INTO Posse_genero VALUES('125025809X', 2);
+INSERT INTO Posse_genero VALUES('125025809X', 3);
+INSERT INTO Posse_genero VALUES('125025809X', 4);
+INSERT INTO Posse_genero VALUES('038549081X', 3);
+INSERT INTO Posse_genero VALUES('1451673310', 3);
+INSERT INTO Posse_genero VALUES('1451673310', 6);
+INSERT INTO Posse_genero VALUES('0307744434', 1);
+INSERT INTO Posse_genero VALUES('1408855690', 1);
+INSERT INTO Posse_genero VALUES('1408855690', 14);
+INSERT INTO posse_genero VALUES('0545010225', 1);
+INSERT INTO posse_genero VALUES('0545010225', 14);
+INSERT INTO Posse_genero VALUES('0375508325', 17);
+INSERT INTO Posse_genero VALUES('7536693966', 3);
+INSERT INTO Posse_genero VALUES('7536693966', 6);
 
--- Instancias de LEITURA
-INSERT INTO leitura VALUES ('stephenking@email.com', '1451673310', 'L', 5);
-INSERT INTO leitura VALUES ('jk@email.com', '1451673310', 'L', 5);
-INSERT INTO leitura VALUES ('stephenking@email.com', '7536693966', 'L', 3);
-INSERT INTO leitura VALUES ('stephenking@email.com', '038549081X', 'L', 3);
-INSERT INTO leitura VALUES ('cs@email.com', '7536693966', 'L', 2);
+-- InstanciaS de leitura
+INSERT INTO Leitura VALUES ('stephenking@email.com', '1451673310', 'L', 5);
+INSERT INTO Leitura VALUES ('jk@email.com', '1451673310', 'L', 5);
+INSERT INTO Leitura VALUES ('jk@email.com', '1451673310', 'L', 5);
+INSERT INTO Leitura VALUES ('stephenking@email.com', '7536693966', 'L', 3);
+INSERT INTO Leitura VALUES ('stephenking@email.com', '038549081X', 'L', 3);
+INSERT INTO Leitura VALUES ('cs@email.com', '7536693966', 'L', 2);
 
--- Instancias de enderecos
-INSERT INTO Endereco(cidade, rua, bairro, nmrEstabelecimento, fk_Pais_codPais)
+-- InstanciaS de endereco
+INSERT INTO endereco(cidade, rua, bairro, nmrEstabelecimento, fk_Pais_codPais)
 VALUES('Nova York', 'Passo Dorneles', 'York', '132', 79);
 
--- Instancias de Eventos
+-- Instancias de Listas
+-- Instancias de Posts
+-- Instancias de Evento
+INSERT INTO Evento(hora, data, descricao, Evento_tipo, fk_Leitor_email, fk_Leitor_email_, fk_endereco_codEnd)
+VALUES ('10:30:00', '2020-09-20', 'Cool Stuff from Carlitos', 1, 'cs@email.com', 'stephenking@email.com', 1);
 
 INSERT INTO Evento(hora, data, descricao, Evento_tipo, fk_Leitor_email, fk_Leitor_email_, fk_endereco_codEnd)
 VALUES ('10:30:00', '2020-09-20', 'Cool Stuff from Carlitos', 1, 'cs@email.com', 'stephenking@email.com', 1);
 
 -- Instancias de participacao
+INSERT INTO Participacao VALUES('stephenking@email.com', 1);
 
-INSERT INTO PARTICIPACAO VALUES('stephenking@email.com', 1);
+--Instancias de Amizade
+
+INSERT INTO Amizade VALUES ('stephenking@email.com', 'jk@email.com');
+INSERT INTO Amizade VALUES ('stephenking@email.com', 'cs@email.com');
+INSERT INTO Amizade VALUES ('cixin@email.com', 'noraroberts@email.com');
+INSERT INTO Amizade VALUES ('noraroberts@email.com', 'jk@email.com');
+
+-- Instancias de Grupo
+INSERT INTO Grupo(nome,fk_Leitor_email) VALUES ('The writers', 'stephenking@email.com')
+INSERT INTO Grupo(nome,fk_Leitor_email) VALUES ('The Fantasy', 'jk@email.com')
+
+-- Instancias de Tag_Grupo
+INSERT INTO Tag_Grupo(tagg) VALUES ('#MAGIC')
+INSERT INTO Tag_Grupo(tagg) VALUES ('#WORLD')
+INSERT INTO Tag_Grupo(tagg) VALUES ('#FUN')
+INSERT INTO Tag_Grupo(tagg) VALUES ('#hahahahah')
+INSERT INTO Tag_Grupo(tagg) VALUES ('#Lul')
+INSERT INTO Tag_Grupo(tagg) VALUES ('#UNIVERSE WITH BUFFS')
+
+-- Instancias de Listas
+INSERT INTO Lista(nome, fk_leitor_email) VALUES ('Books for sleeping', 'noraroberts@email.com')
+INSERT INTO Lista(nome, fk_leitor_email) VALUES ('I hate this', 'jk@email.com')
+
+-- Instancias de Tag_Lista
+INSERT INTO Tag_Lista(tagl) VALUES ('#HORRIBLE')
+INSERT INTO Tag_Lista(tagl) VALUES ('#dIsGuStInG')
+INSERT INTO Tag_Lista(tagl) VALUES ('#WoNdErFuL')
+INSERT INTO Tag_Lista(tagl) VALUES ('#strung')
+INSERT INTO Tag_Lista(tagl) VALUES ('#lotsofemotions')
+INSERT INTO Tag_Lista(tagl) VALUES ('#loveintheair')
+
+
+-- CREATE TABLE Mensagem_PARTICIPA ( fk_Leitor_email VARCHAR(100), fk_Grupo_codGrupo serial); CREATE TABLE Post ( codPost SERIAL, PRIMARY KEY (codPost)); CREATE TABLE Endereco ( codEnd SERIAL, cidade VARCHAR(100), rua VARCHAR(100), bairro VARCHAR(100), nmrEstabelecimento INTEGER, fk_Pais_codPais serial, PRIMARY KEY (codEnd)); CREATE TABLE CONTEM ( FK_Lista_codLista serial, FK_Livro_ISBN CHAR(10)); CREATE TABLE POSSE_TAGG ( FK_Grupo_codGrupo serial, FK_Tag_Grupo_codTagg serial); CREATE TABLE POSSE_TAGL ( FK_Lista_codLista serial, FK_Tag_Lista_codTagl serial); CREATE TABLE POSTAGEM ( FK_Post_codPost serial);
