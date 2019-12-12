@@ -87,11 +87,11 @@ CREATE TABLE Post (
 );
 
 CREATE TABLE Endereco (
+    codEnd SERIAL,
     cidade VARCHAR(100),
     rua VARCHAR(100),
     bairro VARCHAR(100),
     nmrEstabelecimento INTEGER,
-    codEnd SERIAL,
     fk_Pais_codPais serial,
     PRIMARY KEY (codEnd)
 );

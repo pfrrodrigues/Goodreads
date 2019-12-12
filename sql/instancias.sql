@@ -38,7 +38,6 @@ INSERT INTO Livro VALUES('0375508325','Cosmos', 'Cosmos is one of the bestsellin
 INSERT INTO Livro VALUES('7536693966','The Dark Forest (Remembrance of Earths Past Book 2)', 'In The Dark Forest, Earth is reeling from the revelation of a coming alien invasion-in just four centuries time. The aliens human collaborators may have been defeated, but the presence of the sophons, the subatomic particles that allow Trisolaris instant access to all human information, means that Earths defense plans are totally exposed to the enemy. Only the human mind remains a secret. This is the motivation for the Wallfacer Project, a daring plan that grants four men enormous resources to design secret strategies, hidden through deceit and misdirection from Earth and Trisolaris alike. Three of the Wallfacers are influential statesmen and scientists, but the fourth is a total unknown. Luo Ji, an unambitious Chinese astronomer and sociologist, is baffled by his new status. All he knows is that hes the one Wallfacer that Trisolaris wants dead.',
 513, 8, '2015-10-11','https://images-na.ssl-images-amazon.com/images/I/51jYXmPtC2L._SX329_BO1,204,203,200_.jpg');
 
-
 -- Instancias de Pais
 INSERT INTO Pais(nome) VALUES ('Albania');
 INSERT INTO Pais(nome) VALUES ('American Samoa');
@@ -195,3 +194,21 @@ INSERT INTO POSSE_GENERO VALUES('0545010225', 14);
 INSERT INTO POSSE_GENERO VALUES('0375508325', 17);
 INSERT INTO POSSE_GENERO VALUES('7536693966', 3);
 INSERT INTO POSSE_GENERO VALUES('7536693966', 6);
+
+-- Instancias de LEITURA
+INSERT INTO leitura VALUES ('stephenking@email.com', '1451673310', 1, 5);
+INSERT INTO leitura VALUES ('stephenking@email.com', '7536693966', 1, 3);
+INSERT INTO leitura VALUES ('cs@email.com', '7536693966', 1, 2);
+
+-- Instancias de enderecos
+INSERT INTO Endereco(cidade, rua, bairro, nmrEstabelecimento, fk_Pais_codPais)
+VALUES('Nova York', 'Passo Dorneles', 'York', '132', 79);
+
+-- Instancias de Eventos
+
+INSERT INTO Evento(hora, data, descricao, Evento_tipo, fk_Leitor_email, fk_Leitor_email_, fk_endereco_codEnd)
+VALUES ('10:30:00', '2020-09-20', 'Cool Stuff from Carlitos', 1, 'cs@email.com', 'stephenking@email.com', 1);
+
+-- Instancias de participacao
+
+INSERT INTO PARTICIPACAO VALUES('stephenking@email.com', 1);
