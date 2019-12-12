@@ -9,8 +9,8 @@
 
  -- 1) Consulta de Notas média dos livros de cada autor
  -- 2) Saber quantas pessoas participam de eventos de um autor
- -- 3) Saber o genero favorito de cada leitor (genero mais lido)
- -- 4) Mostrar os livros que possuem o mesmo genero de um outro livro
+ -- 3) Saber o livro mais lido de cada leitor
+ -- 4) 
  -- 5) Pesquisar qual o livro mais lido de cada leitor
  -- 6) Pesquisar quais os livros mais lidos de um grupo
  -- 7) Saber qual a lista mais visitada
@@ -40,30 +40,63 @@ JOIN participacao
 ON (participacao.fk_leitor_email = evento.fk_leitor_email_)
 GROUP BY leitor.nome, evento.descricao
 
-
- -- 3) Saber o genero favorito de cada leitor (genero mais lido) INCOMPLETO(NAO EH TAO TRIVIAL ASSIM)
-SELECT lenome, genCnt
-FROM leitor JOIN leitura ON(leitor.email = leitura.fk_leitor_email)
-JOIN posse_genero ON(posse_genero.fk_livro_ISBN = leitura.fk_livro_ISBN)
-JOIN genero ON(genero.codgenero = posse_genero.fk_genero_codgenero)
-GROUP BY genero.
-HAVING MAX(SELECT codgenero FROM )
+-- 3) Saber o genero mais lido de cada leitor
 
 
--- 5) Pesquisar qual o livro mais lido de cada leitor
+ -- 5) Saber o livro mais lido de cada autor 
+SELECT leitor.nome, livro.titulo, COUNT(livro.isbn)
+FROM leitor
+JOIN escrita ON (fk_leitor_email = email)
+JOIN livro ON(escrita.fk_livro_isbn = isbn)
+JOIN leitura ON (isbn = leitura.fk_livro_isbn)
+GROUP BY leitor.email, livro.isbn
+HAVING (leitor.email , COUNT(leitura.fk_livro_isbn)) IN
+    (SELECT le, MAX(cntisbn)
+    FROM (SELECT leitor.email le, COUNT (leitura.fk_livro_isbn) cntisbn
+        FROM leitor
+        JOIN escrita ON (fk_leitor_email = email)
+        JOIN livro ON(escrita.fk_livro_isbn = isbn)
+        JOIN leitura ON (isbn = leitura.fk_livro_isbn)
+        GROUP BY leitor.email,livro.isbn) cnt
+    GROUP BY le)
+
+
+-- 5) Pesquisar qual o livro mais lido de cada leitor ?????
+-- isso parece muito errado
 select leitor.nome, count(classificacao::int) as nmr_leituras
 from ((leitor join escrita on (email=FK_Leitor_email))
 join livro on(FK_Livro_ISBN=isbn)) join leitura on(isbn=leitura.FK_Livro_ISBN)
 where leitura.tipo = 'L'
 group by leitor.nome
 
--- 9)retorna o escritor mais lido
+-- 9)retorna o top 10  escritores mais lidos
 select leitor.nome, count(classificacao::int) as nmr_leituras
 from ((leitor join escrita on (email=FK_Leitor_email))
-    join livro on(FK_Livro_ISBN=isbn)) join leitura on(isbn=leitura.FK_Livro_ISBN)
+join livro on(FK_Livro_ISBN=isbn)) join leitura on(isbn=leitura.FK_Livro_ISBN)
 where leitura.tipo = 'L'
 group by leitor.nome
 order by nmr_leituras desc limit 10;
+
+
+-- VIEWS
+CREATE VIEW leitor_livros AS
+SELECT leitor.nome, livro.titulo, livro.imagem, leitura.classificacao, leitura.tipo, autor.nome autor
+FROM leitor
+JOIN leitura ON (leitor.email = leitura.fk_leitor_email)
+JOIN livro ON (leitura.fk_livro_isbn = livro.isbn)
+JOIN escrita ON (leitura.fk_livro_isbn = escrita.fk_livro_isbn)
+JOIN leitor autor ON (escrita.fk_leitor_email = autor.email);
+-- Visao de leitores e seus livros
+
+-- Queries usando essa view
+SELECT leitor_livros.nome, AVG(leitor_livros.classificacao::int)
+FROM leitor_livros
+GROUP BY leitor_livros.nome;
+-- Se quisermos setar um minimo de classificacoes
+-- HAVING COUNT(leitor_livros.classificacao::int) > 10;
+
+
+
 
 
 -- FUNCTIONS

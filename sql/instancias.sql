@@ -196,9 +196,11 @@ INSERT INTO POSSE_GENERO VALUES('7536693966', 3);
 INSERT INTO POSSE_GENERO VALUES('7536693966', 6);
 
 -- Instancias de LEITURA
-INSERT INTO leitura VALUES ('stephenking@email.com', '1451673310', 1, 5);
-INSERT INTO leitura VALUES ('stephenking@email.com', '7536693966', 1, 3);
-INSERT INTO leitura VALUES ('cs@email.com', '7536693966', 1, 2);
+INSERT INTO leitura VALUES ('stephenking@email.com', '1451673310', 'L', 5);
+INSERT INTO leitura VALUES ('jk@email.com', '1451673310', 'L', 5);
+INSERT INTO leitura VALUES ('stephenking@email.com', '7536693966', 'L', 3);
+INSERT INTO leitura VALUES ('stephenking@email.com', '038549081X', 'L', 3);
+INSERT INTO leitura VALUES ('cs@email.com', '7536693966', 'L', 2);
 
 -- Instancias de enderecos
 INSERT INTO Endereco(cidade, rua, bairro, nmrEstabelecimento, fk_Pais_codPais)
