@@ -18,12 +18,12 @@
 ##############################################################################
 import psycopg2
 import os
-import lists as l
-import mybooks as mb
-import groups as gp
-import friends as fr
-import profile as pf
-import searchbooks as sb
+#import lists as l
+#import mybooks as mb
+#import groups as gp
+#import friends as fr
+#import profile as pf
+#import searchbooks as sb
 
 def home(userdata):
     """ Implements the homepage of system """

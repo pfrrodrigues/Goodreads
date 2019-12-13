@@ -86,6 +86,8 @@ JOIN leitura ON (leitor.email = leitura.fk_leitor_email)
 JOIN livro ON (leitura.fk_livro_isbn = livro.isbn)
 JOIN escrita ON (leitura.fk_livro_isbn = escrita.fk_livro_isbn)
 JOIN leitor autor ON (escrita.fk_leitor_email = autor.email);
+-- Parametro
+-- WHERE leitor.email = $$
 -- Visao de leitores e seus livros
 
 -- Queries usando essa view
