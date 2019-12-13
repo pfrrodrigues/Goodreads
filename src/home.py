@@ -49,7 +49,7 @@ def home(userdata):
     else:
         print(msg_welcomem)
 
-    # Execute the program while the user don't press quit(7)
+    # Executes the program while user don't press quit(7)
     while logged:
 
         section = input(my_books+'\n'+search_books+'\n'+lists+'\n'+groups+'\n'+friends+'\n'+profile+'\n'+quit+'\n:')
