@@ -18,12 +18,13 @@
 ##############################################################################
 import psycopg2
 import os
-#import lists as l
-#import mybooks as mb
-#import groups as gp
-#import friends as fr
-#import profile as pf
-#import searchbooks as sb
+import lists as l
+import mybooks as mb
+import groups as gp
+import friends as fr
+import profile as pf
+import searchbooks as sb
+import events as ev
 
 def home(userdata):
     """ Implements the homepage of system """
@@ -33,13 +34,14 @@ def home(userdata):
     msg_welcomem = "Seja bem-vindo, " + userdata[1] + ".\n\n"
 
     # Sections definition
-    my_books = "1. Meus Livros."
-    search_books = "2. Pesquisar livros."
-    lists = "3. Listas."
-    groups = "4. Grupos."
-    friends = "5. Amigos."
-    profile = "6. Perfil."
-    quit = "7. Sair."
+    my_books = "[1] Meus Livros"
+    search_books = "[2] Pesquisar livros"
+    lists = "[3] Listas"
+    groups = "[4] Grupos"
+    friends = "[5] Amigos"
+    events = "[6] Eventos"
+    profile = "[7] Perfil"
+    quit = "[8] Sair"
 
     os.system('clear')
 
@@ -49,13 +51,13 @@ def home(userdata):
     else:
         print(msg_welcomem)
 
-    # Executes the program while user don't press quit(7)
+    # Execute the program while the user don't press quit(7)
     while logged:
 
-        section = input(my_books+'\n'+search_books+'\n'+lists+'\n'+groups+'\n'+friends+'\n'+profile+'\n'+quit+'\n:')
+        section = input(my_books+'\n'+search_books+'\n'+lists+'\n'+groups+'\n'+friends+'\n'+events+'\n'+profile+'\n'+quit+'\n>> ')
 
         if section == '1':
-            mb.mybooks_page()
+            mb.mybooks_page(userdata[0])
         elif section == '2':
             sb.searchbooks_page()
         elif section == '3':
@@ -65,8 +67,10 @@ def home(userdata):
         elif section == '5':
             fr.friends_page()
         elif section == '6':
-            pf.profile_page()
+            ev.events_page()
         elif section == '7':
+            pf.profile_page()
+        elif section == '8':
             logged = False
         else:
             print()

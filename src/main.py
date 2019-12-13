@@ -25,7 +25,7 @@ def start():
 
     absolute_quit = False
     msg_return_start = "Pressione qualquer botão para voltar para a página inicial..."
-    msg_entry_text = "1. Entrar\t2. Criar uma nova conta\n:"
+    msg_entry_text = "1. Entrar\t2. Criar uma nova conta\n>> "
 
     while not absolute_quit:
         validating = True

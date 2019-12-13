@@ -41,7 +41,7 @@ def login():
         email = input("Email: ")
         passwd = input("Senha: ")
 
-        cur.execute("SELECT email, nome, senha, leitor_tipo FROM leitor WHERE email = %s;", (email,))
+        cur.execute("SELECT email, nome, senha, leitor_tipo, sexo FROM leitor WHERE email = %s;", (email,))
         db_data = cur.fetchone() # Returns a tuple if email exists
 
         if db_data:
@@ -57,4 +57,4 @@ def login():
     conn.close()
 
     # Go to the homepage
-    # hm.home(db_data)
+    hm.home(db_data)
