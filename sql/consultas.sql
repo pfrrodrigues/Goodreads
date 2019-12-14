@@ -61,14 +61,6 @@ HAVING (leitor.email , COUNT(leitura.fk_livro_isbn)) IN
     GROUP BY le)
 
 
--- 5) Pesquisar qual o livro mais lido de cada leitor ?????
--- isso parece muito errado
-select leitor.nome, count(classificacao::int) as nmr_leituras
-from ((leitor join escrita on (email=FK_Leitor_email))
-join livro on(FK_Livro_ISBN=isbn)) join leitura on(isbn=leitura.FK_Livro_ISBN)
-where leitura.tipo = 'L'
-group by leitor.nome
-
 -- 9)retorna o top 10  escritores mais lidos
 select leitor.nome, count(classificacao::int) as nmr_leituras
 from ((leitor join escrita on (email=FK_Leitor_email))
@@ -96,18 +88,96 @@ FROM leitor_livros
 GROUP BY leitor_livros.nome;
 -- Se quisermos setar um minimo de classificacoes
 -- HAVING COUNT(leitor_livros.classificacao::int) > 10;
+              
+        
 
 
 
 
 
 -- FUNCTIONS
+              
+-- retorna os livros de um autor
+create function search_author_books(
+  author varchar
+)
+returns table(nome varchar) as $$
+select livro.titulo from (leitor join escrita on(email=FK_Leitor_email)) join livro on(FK_Livro_ISBN=isbn)
+where leitor.nome = author;
+$$ language sql;
 
 -- retorna livros de um determinado genero
-CREATE FUNCTION search_for_genre(
-    genre VARCHAR
+create function search_for_genre(
+  genre varchar
 )
-returns table(titulo VARCHAR) AS $$
-SELECT livro.titulo
-FROM (livro JOIN posse_genero ON(isbn=FK_Livro_ISBN)) JOIN genero ON(FK_Genero_codGenero=codGenero)
-WHERE genero.nome = genre;rder by nmr_leituras desc limit 10;- 5)
+returns table(titulo varchar) as $$
+  select livro.titulo
+    from (livro join posse_genero on(isbn=FK_Livro_ISBN)) join genero on(FK_Genero_codGenero=codGenero)
+    where genero.nome = genre;
+$$ language sql;
+
+-- retorna os lançamentos do mês
+create view lancamento_editorial
+	as select livro.titulo, leitor.nome, anoPublic
+	from (livro join escrita on(isbn=FK_Livro_ISBN))
+		join leitor on(FK_Leitor_email=email)
+		where extract(month from anoPublic) = extract(month from current_date)
+		and extract (year from anoPublic) = extract(year from current_date);
+
+                       
+ -- retorna os 10 escritores mais lidos nos últimos tempos
+select leitor.nome, count(classificacao::int) as nmr_leituras
+  from ((leitor join escrita on (email=FK_Leitor_email))
+    join livro on(FK_Livro_ISBN=isbn)) join leitura on(isbn=leitura.FK_Livro_ISBN)
+    where leitura.tipo = 'L'
+    group by leitor.nome
+    order by nmr_leituras desc limit 10;
+                  
+                              
+-- retorna os livros marcados por um leitor
+-- chamada: select marked(email);
+create function marked(
+  user_email varchar
+)
+returns table(isbn char, titulo varchar, imagem varchar, nome varchar, tipo char, nota char) as $$
+  select livro.isbn, livro.titulo, livro.imagem, e.nome, leitura.tipo as marcacao, leitura.classificacao as nota
+    from (((leitor l join leitura on (l.email=fk_leitor_email)) join livro on (fk_livro_isbn=isbn))
+    join escrita on (livro.isbn=escrita.fk_livro_isbn)) join leitor e on (escrita.fk_leitor_email=e.email)
+    where l.email = user_email;
+$$ language sql;
+                     
+                     
+-- retorna a media de um determinado livro
+create function avg_rating(
+  isbn char
+)
+returns table(media float) as $$
+  select avg(classificacao::float)
+  from leitura
+  where tipo='L' and fk_livro_isbn=isbn;
+  $$ language sql;
+                     
+                     
+                     
+-- mostra todas as informacoes de um livro
+create function info_book(
+  book_isbn char
+)
+returns table(isbn char, titulo varchar, ano date, descr varchar, img varchar, pag integer,
+formato varchar, autor varchar, genero varchar) as $$
+  select livro.isbn, livro.titulo, livro.anoPublic, livro.descr, livro.imagem, livro.nmrPag,
+         formato.formato, leitor.nome, genero.nome
+  from (((((livro join escrita on (livro.isbn=escrita.fk_livro_isbn))
+        join leitor on (escrita.fk_leitor_email=leitor.email))
+        join formato on (livro.fk_formato_formato_PK=formato.formato_PK))
+        join posse_genero on (livro.isbn=posse_genero.FK_Livro_ISBN))
+        join genero on (posse_genero.FK_Genero_codGenero=genero.codGenero))
+  where livro.isbn = book_isbn;
+  $$ language sql;
+                        
+                        
+  
+                                                 
+                                                 
+                                                 
+
