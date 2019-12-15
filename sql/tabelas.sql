@@ -1,4 +1,4 @@
-
+-- Guarda as informações de usuários(Leitor ou Escritor) do sistema
 CREATE TABLE Leitor (
     email VARCHAR(100) PRIMARY KEY,
     nome VARCHAR(50),
@@ -9,6 +9,7 @@ CREATE TABLE Leitor (
     fk_Pais_codPais SERIAL
 );
 
+-- Guarda as informações de livros contidos no catálogo do sistema
 CREATE TABLE Livro (
     ISBN CHAR(10) PRIMARY KEY,
     titulo VARCHAR(100),
@@ -19,13 +20,7 @@ CREATE TABLE Livro (
     imagem VARCHAR(200)
 );
 
-CREATE TABLE LEITURA (
-    FK_Leitor_email VARCHAR(100),
-    FK_Livro_ISBN CHAR(10),
-    tipo CHAR(1),
-    classificacao CHAR(1)
-);
-
+-- Guarda as informações de eventos criados por usuários do sistema
 CREATE TABLE Evento (
     codEvento SERIAL,
     hora TIME,
@@ -38,6 +33,7 @@ CREATE TABLE Evento (
     PRIMARY KEY (codEvento)
 );
 
+-- Guarda informações de grupos do sistema
 CREATE TABLE Grupo (
     codGrupo SERIAL,
     nome VARCHAR(100),
@@ -45,24 +41,28 @@ CREATE TABLE Grupo (
     PRIMARY KEY (codGrupo)
 );
 
+-- Guarda informações de países contido no catálogo do sistema
 CREATE TABLE Pais (
     codPais SERIAL,
     nome VARCHAR(100),
     PRIMARY KEY (codPais)
 );
 
+-- Guarda informações de gêneros de livros
 CREATE TABLE Genero (
     codGenero SERIAL,
     nome VARCHAR(100),
     PRIMARY KEY(codGenero)
 );
 
+-- Guarda informações de tags relacionadas a grupos
 CREATE TABLE Tag_Grupo (
     codTagg SERIAL,
     tagg VARCHAR(100),
     PRIMARY KEY(codTagg)
 );
 
+-- Guarda informação das listas criadas por usuários no sistema
 CREATE TABLE Lista (
     codLista SERIAL,
     nome VARCHAR(100),
@@ -70,68 +70,88 @@ CREATE TABLE Lista (
     PRIMARY KEY(codLista)
 );
 
+-- Gaurda informações a lista de tags relacionadas as listas dos usuários
 CREATE TABLE Tag_Lista (
     codTagl SERIAL,
     tagl VARCHAR(100),
     PRIMARY KEY(codTagl)
 );
 
+-- Guarda a informação de quais usuários participam de quais grupos
 CREATE TABLE Mensagem_PARTICIPA (
     fk_Leitor_email VARCHAR(100),
     fk_Grupo_codGrupo serial
 );
 
+-- Guarda informações a respeito de um post feito por um usuário
 CREATE TABLE Post (
     codPost SERIAL,
     PRIMARY KEY (codPost)
 );
 
+-- Guarda informações a respeito de endereços de eventos
 CREATE TABLE Endereco (
-    codEnd SERIAL,
     cidade VARCHAR(100),
     rua VARCHAR(100),
     bairro VARCHAR(100),
     nmrEstabelecimento INTEGER,
+    codEnd SERIAL,
     fk_Pais_codPais serial,
     PRIMARY KEY (codEnd)
 );
 
-CREATE TABLE FORMATO (
+-- Guarda informações sobre formato de livros
+CREATE TABLE formato (
     formato_PK SERIAL,
     formato VARCHAR(20),
     PRIMARY KEY(formato_PK)
 );
 
+-- Guarda informações a respeito de amigos de usuários
 CREATE TABLE AMIZADE (
     FK_Leitor_email VARCHAR(100),
     FK_Leitor_email_ VARCHAR(100)
 );
 
+-- Guarda informações a respeito de quais usuários marcaram determinados livros
+CREATE TABLE LEITURA (
+    FK_Leitor_email VARCHAR(100),
+    FK_Livro_ISBN CHAR(10),
+    tipo CHAR(1),
+    classificacao CHAR(1)
+);
+
+-- Guarda informações a respeito de quais leitores escreveram quais livros
 CREATE TABLE ESCRITA (
     FK_Leitor_email VARCHAR(100),
     FK_Livro_ISBN CHAR(10)
 );
 
+-- Guarda informações de quais usuários participam de quais eventoss
 CREATE TABLE PARTICIPACAO (
     FK_Leitor_email VARCHAR(100),
     FK_Evento_codEvento serial
 );
 
+-- Guarda informações a respeito de quais livros possuem quais gêneros
 CREATE TABLE POSSE_GENERO (
     FK_Livro_ISBN CHAR(10),
     FK_Genero_codGenero serial
 );
 
+-- Guarda informações a respeito de livros que uma lista contém
 CREATE TABLE CONTEM (
     FK_Lista_codLista serial,
     FK_Livro_ISBN CHAR(10)
 );
 
+-- Guarda informações a respeito de quais grupos possuem determinadas tags
 CREATE TABLE POSSE_TAGG (
     FK_Grupo_codGrupo serial,
     FK_Tag_Grupo_codTagg serial
 );
 
+-- Guarda informações a respeito de quais listas possuem determinadas tags
 CREATE TABLE POSSE_TAGL (
     FK_Lista_codLista serial,
     FK_Tag_Lista_codTagl serial
