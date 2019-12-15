@@ -4,7 +4,7 @@
 -- FINALIDADE: mostra todos os grupos do sistema
 -- EXEMPLO DE CHAMADA: SELECT * FROM show_groups;
 CREATE VIEW show_groups
-  AS SELECT grupo.codGrupo as codigo grupo.nome AS grupo, grupo.fk_leitor_email AS criador, tag_grupo.tagg AS tag
+  AS SELECT grupo.codGrupo as codigo, grupo.nome AS grupo, grupo.fk_leitor_email AS criador, tag_grupo.tagg AS tag
       FROM (grupo JOIN posse_tagg ON (grupo.codgrupo = posse_tagg.FK_Grupo_codGrupo))
 	    JOIN tag_grupo on(posse_tagg.FK_Tag_Grupo_codTagg = tag_grupo.codtagg);
 
@@ -111,7 +111,7 @@ formato varchar, autor varchar, genero varchar) as $$
 CREATE OR REPLACE FUNCTION participate (
   email VARCHAR
 )
-RETURNS TABLE(codigo VARCHAR) AS $$
+RETURNS TABLE(codigo INT) AS $$
   SELECT fk_Grupo_codGrupo
   FROM Mensagem_PARTICIPA
   WHERE fk_Leitor_email = email;
