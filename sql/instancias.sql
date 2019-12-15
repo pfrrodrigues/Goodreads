@@ -1,254 +1,249 @@
+-- Instancias de Formato
+INSERT INTO formato(formato) VALUES('Livro de Bolso');
+INSERT INTO formato(formato) VALUES('Capa Dura');
+INSERT INTO formato(formato) VALUES('Capa Comum');
+INSERT INTO formato(formato) VALUES('Audio CD');
+INSERT INTO formato(formato) VALUES('Ebook');
+INSERT INTO formato(formato) VALUES('Audiolivro');
+INSERT INTO formato(formato) VALUES('Edição Econômica');
 
--- Instancias de formato
-INSERT INTO Formato(formato) VALUES('Paperback');
-INSERT INTO Formato(formato) VALUES('Hardcover');
-INSERT INTO Formato(formato) VALUES('Leather Bound');
-INSERT INTO Formato(formato) VALUES('Audio CD');
-INSERT INTO Formato(formato) VALUES('Paper');
-INSERT INTO Formato(formato) VALUES('Library Binding');
-INSERT INTO Formato(formato) VALUES('Audiobook');
-INSERT INTO Formato(formato) VALUES('Kindle');
-
--- Instancias de Livro
-INSERT INTO Livro VALUES('1982110562','The Institute: A Novel', '...', 544, 1, '2019-09-10',
-'http://www.stephenking.com.br/wp-content/uploads/2019/02/theinstitute.jpg?w=640');
-
-INSERT INTO Livro VALUES('125025809X','The Rise of Magicks: Chronicles of The One, Book 3',
-'After the sickness known as the Doom destroyed civilization, magick has become commonplace, and Fallon Swift has spent her young years learning its ways. Fallon cannot live in peace until she frees those who have been preyed upon by the government or the fanatical Purity Warriors, endlessly hunted or locked up in laboratories, brutalized for years on end. She is determined to save even those who have been complicit with this evil out of fear or weakness―if, indeed, they can be saved.',
-464,1, '2019-11-26','https://images-na.ssl-images-amazon.com/images/I/51Xr7lcgmcL._SX329_BO1,204,203,200_.jpg');
-
-INSERT INTO Livro VALUES('038549081X','The Handmaid"s Tale', 'In Margaret Atwood’s dystopian future, environmental disasters and declining birthrates have led to a Second American Civil War. The result is the rise of the Republic of Gilead, a totalitarian regime that enforces rigid social roles and enslaves the few remaining fertile women. Offred is one of these, a Handmaid bound to produce children for one of Gilead’s commanders. Deprived of her husband, her child, her freedom, and even her own name, Offred clings to her memories and her will to survive. At once a scathing satire, an ominous warning, and a tour de force of narrative suspense, The Handmaid’s Tale is a modern classic.',
-311,1, '1998-03-16','https://images-na.ssl-images-amazon.com/images/I/61JEruJjWIL.jpg');
-
-INSERT INTO Livro VALUES('1451673310','Fahrenheit 451', 'Guy Montag is a fireman. His job is to destroy the most illegal of commodities, the printed book, along with the houses in which they are hidden. Montag never questions the destruction and ruin his actions produce, returning each day to his bland life and wife, Mildred, who spends all day with her television “family.” But when he meets an eccentric young neighbor, Clarisse, who introduces him to a past where people didn’t live in fear and to a present where one sees the world through the ideas in books instead of the mindless chatter of television, Montag begins to question everything he has ever known.',
-249, 1, '2012-01-10','https://images-na.ssl-images-amazon.com/images/I/41qI9quGIdL._SX324_BO1,204,203,200_.jpg');
-
-INSERT INTO Livro VALUES('0307744434','The Night Circus', 'The circus arrives without warning. No announcements precede it. It is simply there, when yesterday it was not. Within the black-and-white striped canvas tents is an utterly unique experience full of breathtaking amazements. It is called Le Cirque des Rêves, and it is only open at night...',
-401, 8,'2011-09-13','https://images-na.ssl-images-amazon.com/images/I/81mSNsiLjLL.jpg');
-
-INSERT INTO Livro VALUES('1408855690','Harry Potter and the Order of the Phoenix, Book 5', 'We could tell you, but then we`d have to Obliviate your memory.',
-870, 2, '2003-07-01','https://img1.od-cdn.com/ImageType-100/3450-1/%7B2E490A9B-EDD6-4B56-871A-E6170B532FC8%7DImg100.jpg');
-
-INSERT INTO Livro VALUES('0545010225','Harry Potter and the Deathly Hallows, Book 7', 'As he climbs into the sidecar of Hagrids motorbike and takes to the skies, leaving Privet Drive for the last time, Harry Potter knows that Lord Voldemort and the Death Eaters are not far behind. The protective charm that has kept Harry safe until now is broken, but he cannot keep hiding. The Dark Lord is breathing fear into everything Harry loves and to stop him Harry will have to find and destroy the remaining Horcruxes. The final battle must begin - Harry must stand and face his enemy....',
-784,2, '2007-07-01','https://img1.od-cdn.com/ImageType-100/3450-1/%7BE4610191-F47E-4B1A-9461-54F930F8EFF1%7DImg100.jpg');
-
-INSERT INTO Livro VALUES('0375508325','Cosmos', 'Cosmos is one of the bestselling science books of all time. In clear-eyed prose, Sagan reveals a jewel-like blue world inhabited by a life form that is just beginning to discover its own identity and to venture into the vast ocean of space. Featuring a new Introduction by Sagan’s collaborator, Ann Druyan, full color illustrations, and a new Foreword by astrophysicist Neil deGrasse Tyson, Cosmos retraces the fourteen billion years of cosmic evolution that have transformed matter into consciousness, exploring such topics as the origin of life, the human brain, Egyptian hieroglyphics, spacecraft missions, the death of the Sun, the evolution of galaxies, and the forces and individuals who helped to shape modern science.
-', 432, 8, '2013-12-07','https://images-na.ssl-images-amazon.com/images/I/51SX54fcT-L._SX286_BO1,204,203,200_.jpg');
-
-INSERT INTO Livro VALUES('7536693966','The Dark Forest (Remembrance of Earths Past Book 2)', 'In The Dark Forest, Earth is reeling from the revelation of a coming alien invasion-in just four centuries time. The aliens human collaborators may have been defeated, but the presence of the sophons, the subatomic particles that allow Trisolaris instant access to all human information, means that Earths defense plans are totally exposed to the enemy. Only the human mind remains a secret. This is the motivation for the Wallfacer Project, a daring plan that grants four men enormous resources to design secret strategies, hidden through deceit and misdirection from Earth and Trisolaris alike. Three of the Wallfacers are influential statesmen and scientists, but the fourth is a total unknown. Luo Ji, an unambitious Chinese astronomer and sociologist, is baffled by his new status. All he knows is that hes the one Wallfacer that Trisolaris wants dead.',
-513, 8, '2015-10-11','https://images-na.ssl-images-amazon.com/images/I/51jYXmPtC2L._SX329_BO1,204,203,200_.jpg');
 
 -- Instancias de Pais
-INSERT INTO Pais(nome) VALUES ('Albania');
-INSERT INTO Pais(nome) VALUES ('American Samoa');
-INSERT INTO Pais(nome) VALUES ('Anguilla');
-INSERT INTO Pais(nome) VALUES ('Antigua and Barbuda');
-INSERT INTO Pais(nome) VALUES ('Armenia');
-INSERT INTO Pais(nome) VALUES ('Aruba');
+INSERT INTO Pais(nome) VALUES ('Afeganistão');
+INSERT INTO Pais(nome) VALUES ('África do Sul');
+INSERT INTO Pais(nome) VALUES ('Albânia');
+INSERT INTO Pais(nome) VALUES ('Alemanha');
+INSERT INTO Pais(nome) VALUES ('Angola');
+INSERT INTO Pais(nome) VALUES ('Arábia Saudita');
 INSERT INTO Pais(nome) VALUES ('Australia');
-INSERT INTO Pais(nome) VALUES ('Bahamas');
-INSERT INTO Pais(nome) VALUES ('Bahrain');
-INSERT INTO Pais(nome) VALUES ('Barbados');
-INSERT INTO Pais(nome) VALUES ('Belize');
-INSERT INTO Pais(nome) VALUES ('Bermuda');
-INSERT INTO Pais(nome) VALUES ('Bosnia and Herzegovina');
-INSERT INTO Pais(nome) VALUES ('Botswana');
-INSERT INTO Pais(nome) VALUES ('Brazil');
-INSERT INTO Pais(nome) VALUES ('British Virgin Islands');
-INSERT INTO Pais(nome) VALUES ('Cabo Verde');
-INSERT INTO Pais(nome) VALUES ('Canada');
-INSERT INTO Pais(nome) VALUES ('Cayman Islands');
+INSERT INTO Pais(nome) VALUES ('Bélgica');
+INSERT INTO Pais(nome) VALUES ('Bolívia');
+INSERT INTO Pais(nome) VALUES ('Brasil');
+INSERT INTO Pais(nome) VALUES ('Bulgária');
+INSERT INTO Pais(nome) VALUES ('Camarões');
+INSERT INTO Pais(nome) VALUES ('Canadá');
 INSERT INTO Pais(nome) VALUES ('Chile');
 INSERT INTO Pais(nome) VALUES ('China');
-INSERT INTO Pais(nome) VALUES ('Hong Kong');
-INSERT INTO Pais(nome) VALUES ('Macao');
-INSERT INTO Pais(nome) VALUES ('Colombia');
-INSERT INTO Pais(nome) VALUES ('Cook Islands');
+INSERT INTO Pais(nome) VALUES ('Colômbia');
+INSERT INTO Pais(nome) VALUES ('Coreia do Norte');
+INSERT INTO Pais(nome) VALUES ('Coreia do Sul');
 INSERT INTO Pais(nome) VALUES ('Costa Rica');
-INSERT INTO Pais(nome) VALUES ('Curaçao');
-INSERT INTO Pais(nome) VALUES ('Dominica');
-INSERT INTO Pais(nome) VALUES ('Faroe Islands');
-INSERT INTO Pais(nome) VALUES ('Fiji');
-INSERT INTO Pais(nome) VALUES ('Former Yugoslav Republic of Macedonia');
-INSERT INTO Pais(nome) VALUES ('Georgia');
-INSERT INTO Pais(nome) VALUES ('Greenland');
-INSERT INTO Pais(nome) VALUES ('Grenada');
-INSERT INTO Pais(nome) VALUES ('Guam');
-INSERT INTO Pais(nome) VALUES ('Guernsey');
-INSERT INTO Pais(nome) VALUES ('Iceland');
+INSERT INTO Pais(nome) VALUES ('Cuba');
+INSERT INTO Pais(nome) VALUES ('Dinamarca');
+INSERT INTO Pais(nome) VALUES ('Equador');
+INSERT INTO Pais(nome) VALUES ('Espanha');
+INSERT INTO Pais(nome) VALUES ('Estados Unidos');
+INSERT INTO Pais(nome) VALUES ('França');
+INSERT INTO Pais(nome) VALUES ('Gana');
+INSERT INTO Pais(nome) VALUES ('Grecia');
+INSERT INTO Pais(nome) VALUES ('Haiti');
 INSERT INTO Pais(nome) VALUES ('India');
-INSERT INTO Pais(nome) VALUES ('Indonesia');
-INSERT INTO Pais(nome) VALUES ('Isle of Man');
-INSERT INTO Pais(nome) VALUES ('Israel');
-INSERT INTO Pais(nome) VALUES ('Jamaica');
-INSERT INTO Pais(nome) VALUES ('Japan');
-INSERT INTO Pais(nome) VALUES ('Jersey');
-INSERT INTO Pais(nome) VALUES ('Jordan');
-INSERT INTO Pais(nome) VALUES ('Korea');
-INSERT INTO Pais(nome) VALUES ('Malaysia');
-INSERT INTO Pais(nome) VALUES ('Maldives');
-INSERT INTO Pais(nome) VALUES ('Mauritius');
-INSERT INTO Pais(nome) VALUES ('Mongolia');
-INSERT INTO Pais(nome) VALUES ('Montenegro');
-INSERT INTO Pais(nome) VALUES ('Montserrat');
-INSERT INTO Pais(nome) VALUES ('Morocco');
-INSERT INTO Pais(nome) VALUES ('Namibia');
-INSERT INTO Pais(nome) VALUES ('New Caledonia');
-INSERT INTO Pais(nome) VALUES ('Norway');
-INSERT INTO Pais(nome) VALUES ('Oman');
-INSERT INTO Pais(nome) VALUES ('Panama');
+INSERT INTO Pais(nome) VALUES ('Iraque');
+INSERT INTO Pais(nome) VALUES ('Irlanda');
+INSERT INTO Pais(nome) VALUES ('Itália');
+INSERT INTO Pais(nome) VALUES ('Japão');
+INSERT INTO Pais(nome) VALUES ('México');
+INSERT INTO Pais(nome) VALUES ('Nigéria');
+INSERT INTO Pais(nome) VALUES ('Noruega');
+INSERT INTO Pais(nome) VALUES ('Paquistão');
+INSERT INTO Pais(nome) VALUES ('Paraguai');
 INSERT INTO Pais(nome) VALUES ('Peru');
-INSERT INTO Pais(nome) VALUES ('Qatar');
-INSERT INTO Pais(nome) VALUES ('Saint Kitts and Nevis');
-INSERT INTO Pais(nome) VALUES ('Saint Lucia');
-INSERT INTO Pais(nome) VALUES ('Saint Vincent and the Grenadines');
-INSERT INTO Pais(nome) VALUES ('Samoa');
-INSERT INTO Pais(nome) VALUES ('Saudi Arabia');
-INSERT INTO Pais(nome) VALUES ('Serbia');
-INSERT INTO Pais(nome) VALUES ('Seychelles');
-INSERT INTO Pais(nome) VALUES ('Singapore');
-INSERT INTO Pais(nome) VALUES ('South Africa');
-INSERT INTO Pais(nome) VALUES ('Swaziland');
-INSERT INTO Pais(nome) VALUES ('Taiwan');
-INSERT INTO Pais(nome) VALUES ('Thailand');
-INSERT INTO Pais(nome) VALUES ('Trinidad and Tobago');
-INSERT INTO Pais(nome) VALUES ('Tunisia');
-INSERT INTO Pais(nome) VALUES ('Turkey');
-INSERT INTO Pais(nome) VALUES ('Turks and Caicos Islands');
-INSERT INTO Pais(nome) VALUES ('United Arab Emirates');
-INSERT INTO Pais(nome) VALUES ('United Kingdom');
-INSERT INTO Pais(nome) VALUES ('United States');
-INSERT INTO Pais(nome) VALUES ('Uruguay');
-INSERT INTO Pais(nome) VALUES ('US Virgin Islands');
-INSERT INTO Pais(nome) VALUES ('Viet Nam');
-INSERT INTO Pais(nome) VALUES ('Andorra');
-INSERT INTO Pais(nome) VALUES ('Liechtenstein');
-INSERT INTO Pais(nome) VALUES ('Monaco');
-INSERT INTO Pais(nome) VALUES ('San Marino');
-INSERT INTO Pais(nome) VALUES ('Switzerland');
-INSERT INTO Pais(nome) VALUES ('Marshall Islands');
-INSERT INTO Pais(nome) VALUES ('Nauru');
-INSERT INTO Pais(nome) VALUES ('Niue');
-INSERT INTO Pais(nome) VALUES ('Palau');
-INSERT INTO Pais(nome) VALUES ('Vanuatu');
+INSERT INTO Pais(nome) VALUES ('Portugal');
+INSERT INTO Pais(nome) VALUES ('Reino Unido');
+INSERT INTO Pais(nome) VALUES ('Russia');
+INSERT INTO Pais(nome) VALUES ('Senegal');
+INSERT INTO Pais(nome) VALUES ('Servia');
+INSERT INTO Pais(nome) VALUES ('Suiça');
+INSERT INTO Pais(nome) VALUES ('Ucrânia');
+INSERT INTO Pais(nome) VALUES ('Uruguai');
+INSERT INTO Pais(nome) VALUES ('Venezuela');
 
--- Instancias de Leitor
-INSERT INTO Leitor VALUES('stephenking@email.com', 'Stephen King','StephenTheKing', 'M', '1947-09-21',0, 79);
-INSERT INTO Leitor VALUES('noraroberts@email.com', 'Nora Roberts','noraroberts', 'F', '1950-10-10', 0, 79);
-INSERT INTO Leitor VALUES('margaretat@email.com', 'Margaret Atwood','margofmargot?', 'F', '1939-11-18', 0, 19);
-INSERT INTO Leitor VALUES('ray@email.com','Ray Bradbury','isitastrongpasswd?','M', '1920-07-22',0,79);
-INSERT INTO Leitor VALUES('erinm@email.com', 'Erin Morgenstern', 'whoami?', 'F', '1978-07-08', 0, 79);
-INSERT INTO Leitor VALUES('jk@email.com', 'J. K. Rowling', 'wingardiumLeviosa', 'F', '1965-07-31', 0, 14);
-INSERT INTO Leitor VALUES('cs@email.com', 'Carl Sagan', 'iloveanndruyan', 'M', '1934-11-09', 0, 79);
-INSERT INTO Leitor VALUES('cixin@email.com', 'Cixin Liu', 'dongfangyanxu', 'M', '1963-06-23', 0, 22);
 
 -- Instancias de genero
-INSERT INTO Genero(nome) VALUES('Fantasy');
+INSERT INTO Genero(nome) VALUES('Fantasia');
 INSERT INTO Genero(nome) VALUES('Romance');
-INSERT INTO Genero(nome) VALUES('Science Fiction');
-INSERT INTO Genero(nome) VALUES('Thriller');
-INSERT INTO Genero(nome) VALUES('Classic');
-INSERT INTO Genero(nome) VALUES('Historical Fiction');
-INSERT INTO Genero(nome) VALUES('Horror');
-INSERT INTO Genero(nome) VALUES('Mystery');
-INSERT INTO Genero(nome) VALUES('Biography');
-INSERT INTO Genero(nome) VALUES('Journalism');
-INSERT INTO Genero(nome) VALUES('Poetry');
-INSERT INTO Genero(nome) VALUES('Autobiography');
-INSERT INTO Genero(nome) VALUES('Humour');
-INSERT INTO Genero(nome) VALUES('Young Adult Fiction');
-INSERT INTO Genero(nome) VALUES('Dictionary');
-INSERT INTO Genero(nome) VALUES('Textbook');
-INSERT INTO Genero(nome) VALUES('Science and Math');
-INSERT INTO Genero(nome) VALUES('Self-Help');
-INSERT INTO Genero(nome) VALUES('Religion and Spirituality');
-INSERT INTO Genero(nome) VALUES('Computers & Technology');
-
--- Instancias de escrita
-INSERT INTO Escrita VALUES('stephenking@email.com','1982110562');
-INSERT INTO Escrita VALUES('noraroberts@email.com','125025809X');
-INSERT INTO Escrita VALUES('margaretat@email.com','038549081X');
-INSERT INTO Escrita VALUES('ray@email.com','1451673310');
-INSERT INTO Escrita VALUES('erinm@email.com','0307744434');
-INSERT INTO Escrita VALUES('jk@email.com','1408855690');
-INSERT INTO Escrita VALUES('jk@email.com','0545010225');
-INSERT INTO Escrita VALUES('cs@email.com','0375508325');
-INSERT INTO Escrita VALUES('cixin@email.com','7536693966');
-
--- InstanciaS de posse_genero
-INSERT INTO Posse_genero VALUES('1982110562', 4);
-INSERT INTO Posse_genero VALUES('1982110562', 7);
-INSERT INTO Posse_genero VALUES('1982110562', 8);
-INSERT INTO Posse_genero VALUES('125025809X', 1);
-INSERT INTO Posse_genero VALUES('125025809X', 2);
-INSERT INTO Posse_genero VALUES('125025809X', 3);
-INSERT INTO Posse_genero VALUES('125025809X', 4);
-INSERT INTO Posse_genero VALUES('038549081X', 3);
-INSERT INTO Posse_genero VALUES('1451673310', 3);
-INSERT INTO Posse_genero VALUES('1451673310', 6);
-INSERT INTO Posse_genero VALUES('0307744434', 1);
-INSERT INTO Posse_genero VALUES('1408855690', 1);
-INSERT INTO Posse_genero VALUES('1408855690', 14);
-INSERT INTO posse_genero VALUES('0545010225', 1);
-INSERT INTO posse_genero VALUES('0545010225', 14);
-INSERT INTO Posse_genero VALUES('0375508325', 17);
-INSERT INTO Posse_genero VALUES('7536693966', 3);
-INSERT INTO Posse_genero VALUES('7536693966', 6);
-
--- InstanciaS de leitura
-INSERT INTO Leitura VALUES ('stephenking@email.com', '1451673310', 'L', 5);
-INSERT INTO Leitura VALUES ('jk@email.com', '1451673310', 'L', 5);
-INSERT INTO Leitura VALUES ('jk@email.com', '1451673310', 'L', 5);
-INSERT INTO Leitura VALUES ('stephenking@email.com', '7536693966', 'L', 3);
-INSERT INTO Leitura VALUES ('stephenking@email.com', '038549081X', 'L', 3);
-INSERT INTO Leitura VALUES ('cs@email.com', '7536693966', 'L', 2);
-
--- InstanciaS de endereco
-INSERT INTO endereco(cidade, rua, bairro, nmrEstabelecimento, fk_Pais_codPais)
-VALUES('Nova York', 'Passo Dorneles', 'York', '132', 79);
-
--- Instancias de Listas
--- Instancias de Posts
--- Instancias de Evento
-INSERT INTO Evento(hora, data, descricao, Evento_tipo, fk_Leitor_email, fk_Leitor_email_, fk_endereco_codEnd)
-VALUES ('10:30:00', '2020-09-20', 'Cool Stuff from Carlitos', 1, 'cs@email.com', 'stephenking@email.com', 1);
-
-INSERT INTO Evento(hora, data, descricao, Evento_tipo, fk_Leitor_email, fk_Leitor_email_, fk_endereco_codEnd)
-VALUES ('10:30:00', '2020-09-20', 'Cool Stuff from Carlitos', 1, 'cs@email.com', 'stephenking@email.com', 1);
-
--- Instancias de participacao
-INSERT INTO Participacao VALUES('stephenking@email.com', 1);
-
---Instancias de Amizade
-
-INSERT INTO Amizade VALUES ('stephenking@email.com', 'jk@email.com');
-INSERT INTO Amizade VALUES ('stephenking@email.com', 'cs@email.com');
-INSERT INTO Amizade VALUES ('cixin@email.com', 'noraroberts@email.com');
-INSERT INTO Amizade VALUES ('noraroberts@email.com', 'jk@email.com');
-
--- Instancias de Grupo
-INSERT INTO Grupo(nome,fk_Leitor_email) VALUES ('The writers', 'stephenking@email.com')
-INSERT INTO Grupo(nome,fk_Leitor_email) VALUES ('The Fantasy', 'jk@email.com')
-
--- Instancias de Tag_Grupo
-INSERT INTO Tag_Grupo(tagg) VALUES ('#MAGIC')
-INSERT INTO Tag_Grupo(tagg) VALUES ('#WORLD')
-INSERT INTO Tag_Grupo(tagg) VALUES ('#FUN')
-INSERT INTO Tag_Grupo(tagg) VALUES ('#hahahahah')
-INSERT INTO Tag_Grupo(tagg) VALUES ('#Lul')
-INSERT INTO Tag_Grupo(tagg) VALUES ('#UNIVERSE WITH BUFFS')
-
--- Instancias de Listas
-INSERT INTO Lista(nome, fk_leitor_email) VALUES ('Books for sleeping', 'noraroberts@email.com')
-INSERT INTO Lista(nome, fk_leitor_email) VALUES ('I hate this', 'jk@email.com')
-
--- Instancias de Tag_Lista
-INSERT INTO Tag_Lista(tagl) VALUES ('#HORRIBLE')
-INSERT INTO Tag_Lista(tagl) VALUES ('#dIsGuStInG')
-INSERT INTO Tag_Lista(tagl) VALUES ('#WoNdErFuL')
-INSERT INTO Tag_Lista(tagl) VALUES ('#strung')
-INSERT INTO Tag_Lista(tagl) VALUES ('#lotsofemotions')
-INSERT INTO Tag_Lista(tagl) VALUES ('#loveintheair')
+INSERT INTO Genero(nome) VALUES('Ficção Científica');
+INSERT INTO Genero(nome) VALUES('Thriller Psicológico');
+INSERT INTO Genero(nome) VALUES('Classicos');
+INSERT INTO Genero(nome) VALUES('Ficção Histórica');
+INSERT INTO Genero(nome) VALUES('Terror');
+INSERT INTO Genero(nome) VALUES('Mistério');
+INSERT INTO Genero(nome) VALUES('Biografia');
+INSERT INTO Genero(nome) VALUES('Jornalismo');
+INSERT INTO Genero(nome) VALUES('Poesia');
+INSERT INTO Genero(nome) VALUES('Autobiografia');
+INSERT INTO Genero(nome) VALUES('Humor');
+INSERT INTO Genero(nome) VALUES('Ficção Jovem Adulto');
+INSERT INTO Genero(nome) VALUES('Dicionário');
+INSERT INTO Genero(nome) VALUES('Livro Texto');
+INSERT INTO Genero(nome) VALUES('Ciência e Matemática');
+INSERT INTO Genero(nome) VALUES('Auto-Ajuda');
+INSERT INTO Genero(nome) VALUES('Religião e Espiritualidade');
+INSERT INTO Genero(nome) VALUES('Computadores e Tecnologia');
 
 
--- CREATE TABLE Mensagem_PARTICIPA ( fk_Leitor_email VARCHAR(100), fk_Grupo_codGrupo serial); CREATE TABLE Post ( codPost SERIAL, PRIMARY KEY (codPost)); CREATE TABLE Endereco ( codEnd SERIAL, cidade VARCHAR(100), rua VARCHAR(100), bairro VARCHAR(100), nmrEstabelecimento INTEGER, fk_Pais_codPais serial, PRIMARY KEY (codEnd)); CREATE TABLE CONTEM ( FK_Lista_codLista serial, FK_Livro_ISBN CHAR(10)); CREATE TABLE POSSE_TAGG ( FK_Grupo_codGrupo serial, FK_Tag_Grupo_codTagg serial); CREATE TABLE POSSE_TAGL ( FK_Lista_codLista serial, FK_Tag_Lista_codTagl serial); CREATE TABLE POSTAGEM ( FK_Post_codPost serial);
+-- Instâncias de Escritores
+-- tipo 0: Escritor
+-- tipo 1: Leitor
+INSERT INTO Leitor VALUES('carlsagan@goodreads.com', 'Carl Sagan', '$pbkdf2-sha256$29000$yLn3nvNe6x1jrBUipHSu9Q$9dsFr3c6DT5YWuydlrCE4grgafbe75TJoMzCMrCPjI4',
+'M', '2019-12-12', 0,24);
+INSERT INTO Leitor VALUES('cixinliu@goodreads.com', 'Cixin Liu', '$pbkdf2-sha256$29000$yLn3nvNe6x1jrBUipHSu9Q$9dsFr3c6DT5YWuydlrCE4grgafbe75TJoMzCMrCPjI4',
+'M', '1963-06-23', 0,15);
+INSERT INTO Leitor VALUES('shawking@goodreads.com', 'Stephen Hawking', '$pbkdf2-sha256$29000$yLn3nvNe6x1jrBUipHSu9Q$9dsFr3c6DT5YWuydlrCE4grgafbe75TJoMzCMrCPjI4',
+'M', '2019-12-12', 0,41);
+INSERT INTO Leitor VALUES('agathachristie@goodreads.com', 'Agatha Christie', '$pbkdf2-sha256$29000$yLn3nvNe6x1jrBUipHSu9Q$9dsFr3c6DT5YWuydlrCE4grgafbe75TJoMzCMrCPjI4',
+'F', '2019-12-12', 0,41);
+INSERT INTO Leitor VALUES('jkrowling@goodreads.com', 'J. K. Rowling', '$pbkdf2-sha256$29000$yLn3nvNe6x1jrBUipHSu9Q$9dsFr3c6DT5YWuydlrCE4grgafbe75TJoMzCMrCPjI4',
+'F', '1965-07-31', 0,41);
+INSERT INTO Leitor VALUES('hlee@goodreads.com', 'Harper Lee', '$pbkdf2-sha256$29000$yLn3nvNe6x1jrBUipHSu9Q$9dsFr3c6DT5YWuydlrCE4grgafbe75TJoMzCMrCPjI4',
+'F', '2019-12-12', 0,24);
+INSERT INTO Leitor VALUES('matwood@goodreads.com', 'Margaret Atwood', '$pbkdf2-sha256$29000$yLn3nvNe6x1jrBUipHSu9Q$9dsFr3c6DT5YWuydlrCE4grgafbe75TJoMzCMrCPjI4',
+'F', '1939-09-18', 0,13);
+INSERT INTO Leitor VALUES('sof@goodreads.com', 'Sófocles', '$pbkdf2-sha256$29000$yLn3nvNe6x1jrBUipHSu9Q$9dsFr3c6DT5YWuydlrCE4grgafbe75TJoMzCMrCPjI4',
+'M', '2019-12-12', 0,27);
+INSERT INTO Leitor VALUES('janea@goodreads.com', 'Jane Austen', '$pbkdf2-sha256$29000$yLn3nvNe6x1jrBUipHSu9Q$9dsFr3c6DT5YWuydlrCE4grgafbe75TJoMzCMrCPjI4',
+'F', '2019-12-12', 0,41);
+INSERT INTO Leitor VALUES('mshelley@goodreads.com', 'Mary Shelley', '$pbkdf2-sha256$29000$yLn3nvNe6x1jrBUipHSu9Q$9dsFr3c6DT5YWuydlrCE4grgafbe75TJoMzCMrCPjI4',
+'F', '2019-12-12', 0,41);
+INSERT INTO Leitor VALUES('steph@goodreads.com', 'Stephenie Meyer', '$pbkdf2-sha256$29000$yLn3nvNe6x1jrBUipHSu9Q$9dsFr3c6DT5YWuydlrCE4grgafbe75TJoMzCMrCPjI4',
+'F', '1973-12-24', 0,24);
+INSERT INTO Leitor VALUES('orwell@goodreads.com', 'George Orwell', '$pbkdf2-sha256$29000$yLn3nvNe6x1jrBUipHSu9Q$9dsFr3c6DT5YWuydlrCE4grgafbe75TJoMzCMrCPjI4',
+'M', '2019-12-12', 0,41);
+INSERT INTO Leitor VALUES('patrickroth@goodreads.com', 'Patrick Rothfuss', '$pbkdf2-sha256$29000$yLn3nvNe6x1jrBUipHSu9Q$9dsFr3c6DT5YWuydlrCE4grgafbe75TJoMzCMrCPjI4',
+'M', '1973-06-06', 0,24);
+INSERT INTO Leitor VALUES('massis@goodreads.com', 'Machado de Assis', '$pbkdf2-sha256$29000$yLn3nvNe6x1jrBUipHSu9Q$9dsFr3c6DT5YWuydlrCE4grgafbe75TJoMzCMrCPjI4',
+'M', '2019-12-12', 0,10);
+INSERT INTO Leitor VALUES('emilybronte@goodreads.com', ' Emily Bronte', '$pbkdf2-sha256$29000$yLn3nvNe6x1jrBUipHSu9Q$9dsFr3c6DT5YWuydlrCE4grgafbe75TJoMzCMrCPjI4',
+'F', '2019-12-12', 0,41);
+INSERT INTO Leitor VALUES('pfrrodrigues@goodreads.com', 'Pablo Rodrigues', '$pbkdf2-sha256$29000$DkEoBQBA6J3znnMOwRhjDA$9GYhpxye5g2BxvIxW2IsPrL6EzRdSN.hEAb3K4G8LUc',
+'M', '1998-06-23', 1, 10);
+INSERT INTO Leitor VALUES('avccamargo@goodreads.com', 'Arthur Camargo', '$pbkdf2-sha256$29000$DkEoBQBA6J3znnMOwRhjDA$9GYhpxye5g2BxvIxW2IsPrL6EzRdSN.hEAb3K4G8LUc',
+'M', '2019-12-12', 1, 10);
+INSERT INTO Leitor VALUES('alice@goodreads.com', 'Alice Sloan', '$pbkdf2-sha256$29000$DkEoBQBA6J3znnMOwRhjDA$9GYhpxye5g2BxvIxW2IsPrL6EzRdSN.hEAb3K4G8LUc',
+'F', '2019-12-12', 1, 24);
+INSERT INTO Leitor VALUES('rgalante@goodreads.com', 'Renata Galante', '$pbkdf2-sha256$29000$DkEoBQBA6J3znnMOwRhjDA$9GYhpxye5g2BxvIxW2IsPrL6EzRdSN.hEAb3K4G8LUc',
+'F', '2019-12-12', 1, 10);
+INSERT INTO Leitor VALUES('dongdong@goodreads.com', 'Yang Dong', '$pbkdf2-sha256$29000$DkEoBQBA6J3znnMOwRhjDA$9GYhpxye5g2BxvIxW2IsPrL6EzRdSN.hEAb3K4G8LUc',
+'F', '1998-06-23', 1, 15);
+
+-- Instâncias de Livro
+INSERT INTO Livro VALUES('8535911944', 'Bilhões e bilhões', 'Último livro escrito por Carl Sagan - e publicado postumamente por Ann Druyan, sua mulher e colaboradora, Bilhões e bilhões traz dezenove artigos dedicados a temas variados. Une-os o fio da racionalidade no exame das coisas do mundo',
+288, 3, '2008-03-25', 'https://images-na.ssl-images-amazon.com/images/I/51z7Wgm5vEL._SX342_BO1,204,203,200_.jpg');
+
+INSERT INTO Livro VALUES('8556510205', 'O Problema dos Três Corpos', 'China, final dos anos 1960. Enquanto o país inteiro está sendo devastado pela violência da Revolução Cultural, um pequeno grupo de astrofísicos, militares e engenheiros começa um projeto ultrassecreto envolvendo ondas sonoras e seres extraterrestres.',
+320, 3, '2016-09-13', 'https://images-na.ssl-images-amazon.com/images/I/51mVEpYbblL.jpg');
+
+INSERT INTO Livro VALUES('8556510507', 'A Floresta Sombria', 'Depois de "O problema dos três corpos", a humanidade se prepara para a iminente invasão alienígena.',
+472, 3, '2017-10-30','https://images-na.ssl-images-amazon.com/images/I/51Fy13z7v1L.jpg');
+
+INSERT INTO Livro VALUES('8580576466', 'Uma Breve História do Tempo','Uma das mentes mais geniais do mundo moderno, Stephen Hawking guia o leitor na busca por respostas a algumas das maiores dúvidas da humanidade: Qual a origem do universo? Ele é infinito?...',
+256, 5, '2015-01-22', 'https://images-na.ssl-images-amazon.com/images/I/51aG2%2BoutOL.jpg');
+
+INSERT INTO Livro VALUES('8580415012', 'Os Crimes ABC', 'Há um serial killer à solta, matando suas vítimas em ordem alfabética. A única pista que a polícia tem é um macabro cartão de visitas que o assassino deixa em cada cena do crime...',
+150, 5, '2008-11-12', 'https://images-na.ssl-images-amazon.com/images/I/91aLWHmg8QL.jpg');
+
+INSERT INTO Livro VALUES('8532530796','Harry Potter e a Câmara Secreta', 'Depois de férias aborrecidas na casa dos tios trouxas, está na hora de Harry Potter voltar a estudar. Coisas acontecem, no entanto, para dificultar o regresso de Harry...',
+224, 2, '2017-08-19', 'https://images-na.ssl-images-amazon.com/images/I/71NsVQ5MlwL.jpg');
+
+INSERT INTO Livro VALUES('8532530842','Harry Potter e as relíquias da morte', 'Harry Potter e as relíquias da morte, de J.K. Rowling, é o sétimo e último livro da série. Voldemorte está cada vez mais forte e Harry Potter precisa encontrar e aniquilar as Horcruxes para enfraquecer o lorde e poder enfrentálo.',
+512, 2, '2017-08-19', 'https://d1pkzhm5uq4mnt.cloudfront.net/imagens/capas/_f9b329bdfe71cb03efa4f0a2a6ebfee60dbe8d03.jpg');
+
+INSERT INTO Livro VALUES('8532520669', 'O Conto da Aia', 'O romance distópico O conto da aia, de Margaret Atwood, se passa num futuro muito próximo e tem como cenário uma república onde não existem mais jornais, revistas, livros nem filmes...',
+368, 3, '2017-06-07', 'https://images-na.ssl-images-amazon.com/images/I/91AHNAr638L.jpg');
+
+INSERT INTO Livro VALUES('8503009498', 'O Sol é para Todos', 'Um livro emblemático sobre racismo e injustiça e um dos maiores clássicos da literatura mundial.Um livro emblemático sobre racismo e injustiça: a história de um advogado...',
+350, 3, '2006-10-10', 'https://images-na.ssl-images-amazon.com/images/I/51SDFG0BD8L._SR600,315_SCLZZZZZZZ_.jpg');
+
+INSERT INTO Livro VALUES('8537817368', 'Édipo Rei', 'Insultado por um homem embriagado que o chamou de filho adotivo, Édipo, herdeiro do trono de Corinto, se dirige a Delfos em busca de respostas sobre sua origem.',
+128, 5, '2018-04-12', 'https://images-na.ssl-images-amazon.com/images/I/51lTtg2%2Bv6L._SX298_BO1,204,203,200_.jpg');
+
+INSERT INTO Livro VALUES('8578553071', 'Orgulho e Preconceito', 'Em “Orgulho e Preconceito”, Elizabeth Bennet, segunda de 5 filhas de um proprietário rural na cidade fictícia de Meryton, lida com os problemas relacionados à educação, cultura, moral e casamento na sociedade aristocrática do início do século XIX',
+399, 2, '2017-04-11', 'https://www.casasbahia-imagens.com.br/livros/LivrodeLiteraturaEstrangeira/Romance/174186/5899044/Orgulho-e-Preconceito-Jane-Austen-174186.jpg');
+
+INSERT INTO Livro VALUES('8594540183', 'Frankenstein', 'A criatura de Frankenstein é considerada o primeiro mito dos tempos modernos.Para compor sua bem-sucedida experiência literária, Shelley costurou influências diversas, que vão do livro do Gênesis a Paraíso Perdido, da Grécia Antiga ao Iluminismo. ',
+304, 7, '2017-02-06', 'https://http2.mlstatic.com/livro-frankenstein-darkside-capa-dura-lacrado-D_NQ_NP_716364-MLB31683742516_082019-F.jpg');
+
+INSERT INTO Livro VALUES('8598078301', 'Crepúsculo', 'Crepúsculo poderia ser uma história comum, não fosse um elemento irresistível: o objeto da paixão da protagonista é um vampiro. Assim, soma-se à paixão um perigo sobrenatural temperado com muito suspense, e o resultado é uma leitura de tirar o fôlego...',
+480, 3, '2008-12-12', 'http://statics.livrariacultura.net.br/products/capas_lg/195/11018195.jpg');
+
+INSERT INTO Livro VALUES('8535914846', '1984', 'Winston, herói de 1984, último romance de George Orwell, vive aprisionado na engrenagem totalitária de uma sociedade completamente dominada pelo Estado, onde tudo é feito coletivamente, mas cada qual vive sozinho...',
+416, 3, '2009-12-17', 'https://images-na.ssl-images-amazon.com/images/I/41E9Z5XaHcL.jpg');
+
+INSERT INTO Livro VALUES('853781752X', 'O Morro dos Ventos Uivantes', 'No centro dos acontecimentos dessa história de obsessão e dor, perversidade e vingança, estão a obstinada figura de Catherine Earnshaw e o rude e enérgico Heathcliff...',
+480, 7, '2018-10-10', 'https://images-na.ssl-images-amazon.com/images/I/51UdKJDe2TL.jpg');
+
+INSERT INTO Livro VALUES('8599296493', 'O Nome do Vento', ' Da infância numa trupe de artistas itinerantes, passando pelos anos vividos numa cidade hostil e pelo esforço para ingressar na escola de magia, O nome do vento acompanha a trajetória de Kote...',
+656, 3, '2009-12-13', 'https://lojasaraiva.vteximg.com.br/arquivos/ids/9194257-287-426/1006695900.jpg?v=637103721392230000');
+
+INSERT INTO Livro VALUES('6580210087', 'O Alienista', 'Com quantos doidos se faz uma cidadezinha? É o que está prestes a investigar o ilustre Dr. Simão Bacamarte, renomado médico com estudos no exterior, que funda na vila de Itaguaí a Casa Verde, instituto onde pretende estudar e tratar todos...',
+304, 2, '2019-10-01', 'https://images-na.ssl-images-amazon.com/images/I/41v3HwWeX4L._SX322_BO1,204,203,200_.jpg');
+
+INSERT INTO Livro VALUES('0000000000', 'Teste', '',
+304, 2, '2019-12-01', 'https://images-na.ssl-images-amazon.com/images/I/41v3HwWeX4L._SX322_BO1,204,203,200_.jpg');
+
+
+-- Instâncias de Escrita
+INSERT INTO ESCRITA VALUES('carlsagan@goodreads.com', '8535911944');
+INSERT INTO ESCRITA VALUES('carlsagan@goodreads.com', '0000000000');
+INSERT INTO ESCRITA VALUES('cixinliu@goodreads.com', '8556510205');
+INSERT INTO ESCRITA VALUES('cixinliu@goodreads.com', '8556510507');
+INSERT INTO ESCRITA VALUES('shawking@goodreads.com', '8580576466');
+INSERT INTO ESCRITA VALUES('agathachristie@goodreads.com', '8580415012');
+INSERT INTO ESCRITA VALUES('jkrowling@goodreads.com', '8532530796');
+INSERT INTO ESCRITA VALUES('jkrowling@goodreads.com', '8532530842');
+INSERT INTO ESCRITA VALUES('hlee@goodreads.com', '8503009498');
+INSERT INTO ESCRITA VALUES('matwood@goodreads.com', '8532520669');
+INSERT INTO ESCRITA VALUES('sof@goodreads.com', '8537817368');
+INSERT INTO ESCRITA VALUES('janea@goodreads.com', '8578553071');
+INSERT INTO ESCRITA VALUES('mshelley@goodreads.com', '8594540183');
+INSERT INTO ESCRITA VALUES('steph@goodreads.com', '8598078301');
+INSERT INTO ESCRITA VALUES('orwell@goodreads.com', '8535914846');
+INSERT INTO ESCRITA VALUES('patrickroth@goodreads.com', '8599296493');
+INSERT INTO ESCRITA VALUES('massis@goodreads.com', '6580210087');
+INSERT INTO ESCRITA VALUES('emilybronte@goodreads.com', '853781752X');
+
+--  Instancias de POSSE_GENERO
+INSERT INTO POSSE_GENERO VALUES('8535911944',17);
+INSERT INTO POSSE_GENERO VALUES('8556510205',3);
+INSERT INTO POSSE_GENERO VALUES('8556510205',3);
+INSERT INTO POSSE_GENERO VALUES('8580576466',17);
+INSERT INTO POSSE_GENERO VALUES('8580415012',5);
+INSERT INTO POSSE_GENERO VALUES('8580415012',8);
+INSERT INTO POSSE_GENERO VALUES('8532530796',1);
+INSERT INTO POSSE_GENERO VALUES('8532530796',14);
+INSERT INTO POSSE_GENERO VALUES('8532530842',1);
+INSERT INTO POSSE_GENERO VALUES('8532530842',14);
+INSERT INTO POSSE_GENERO VALUES('8503009498',2);
+INSERT INTO POSSE_GENERO VALUES('8503009498',6);
+INSERT INTO POSSE_GENERO VALUES('8532520669',6);
+INSERT INTO POSSE_GENERO VALUES('8532520669',2);
+INSERT INTO POSSE_GENERO VALUES('8537817368',5);
+INSERT INTO POSSE_GENERO VALUES('8578553071',2);
+INSERT INTO POSSE_GENERO VALUES('8578553071',5);
+INSERT INTO POSSE_GENERO VALUES('8594540183',7);
+INSERT INTO POSSE_GENERO VALUES('8594540183',4);
+INSERT INTO POSSE_GENERO VALUES('8594540183',3);
+INSERT INTO POSSE_GENERO VALUES('8598078301',2);
+INSERT INTO POSSE_GENERO VALUES('8535914846',5);
+INSERT INTO POSSE_GENERO VALUES('8535914846',3);
+INSERT INTO POSSE_GENERO VALUES('8599296493',1);
+INSERT INTO POSSE_GENERO VALUES('6580210087',5);
+INSERT INTO POSSE_GENERO VALUES('853781752X',5);
+INSERT INTO POSSE_GENERO VALUES('853781752X',2);
+
+
+-- Instancias de LEITURA
+-- TIPO: LIDO(L)
+INSERT INTO LEITURA VALUES ('pfrrodrigues@goodreads.com', '8594540183', 'L', '5');
+INSERT INTO LEITURA VALUES ('avccamargo@goodreads.com', '8594540183', 'L', '3');
+INSERT INTO LEITURA VALUES ('pfrrodrigues@goodreads.com', '8532530842', 'L', '4');
+
+-- TIPO: DESEJO LER(D)
+INSERT INTO LEITURA(fk_Leitor_email, FK_Livro_ISBN, tipo) VALUES('pfrrodrigues@goodreads.com', '8535911944', 'D');
+INSERT INTO LEITURA(fk_Leitor_email, FK_Livro_ISBN, tipo) VALUES ('pfrrodrigues@goodreads.com', '8556510205', 'D');
+INSERT INTO LEITURA(fk_Leitor_email, FK_Livro_ISBN, tipo) VALUES('avccamargo@goodreads.com', '8556510205', 'D');
+INSERT INTO LEITURA(fk_Leitor_email, FK_Livro_ISBN, tipo) VALUES('avccamargo@goodreads.com', '8535911944', 'D');
+
+-- TIPO: ATUALMENTE LENDO(A)
+INSERT INTO LEITURA(fk_Leitor_email, FK_Livro_ISBN, tipo) VALUES('avccamargo@goodreads.com', '8580576466', 'A');
+INSERT INTO LEITURA(fk_Leitor_email, FK_Livro_ISBN, tipo) VALUES('pfrrodrigues@goodreads.com', '8580576466', 'A');
