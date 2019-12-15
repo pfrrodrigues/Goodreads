@@ -90,6 +90,29 @@ GROUP BY leitor_livros.nome;
 
 
 
+-- DELETIONS
+
+DELETE FROM lista
+WHERE lista.codlista = ?
+-- WHERE lista.codlista = %s
+--dado um codlista
+
+DELETE FROM contem
+WHERE fk_lista_codlista = ? 
+-- Deleta uma lista de uma relacao de contem
+
+
+DELETE FROM lista
+WHERE lista.codlista = ?
+-- Deleta uma lista
+
+DELETE FROM tag_lista
+WHERE NOT EXISTS(SELECT * FROM posse_tagl
+    WHERE fk_tag_lista_codtagl = codtagl)
+-- Deleta uma tag que nao esta sendo usada
+
+-- ALTER TABLES
+
 
 
 -- FUNCTIONS
@@ -102,7 +125,7 @@ from (((leitor l join leitura on (l.email=fk_leitor_email)) join livro on (fk_li
     join escrita on (livro.isbn=escrita.fk_livro_isbn)) join leitor e on (escrita.fk_leitor_email=e.email)
 where livro.isbn = isbn;
 $$ language sql;
-              
+
 -- retorna os livros de um autor
 create function search_author_books(
   author varchar
@@ -130,7 +153,6 @@ create view lancamento_editorial
 		where extract(month from anoPublic) = extract(month from current_date)
 		and extract (year from anoPublic) = extract(year from current_date);
 
-                       
  -- retorna os 10 escritores mais lidos nos últimos tempos
 select leitor.nome, count(classificacao::int) as nmr_leituras
   from ((leitor join escrita on (email=FK_Leitor_email))
@@ -138,8 +160,7 @@ select leitor.nome, count(classificacao::int) as nmr_leituras
     where leitura.tipo = 'L'
     group by leitor.nome
     order by nmr_leituras desc limit 10;
-                  
-                              
+
 -- retorna os livros marcados por um leitor
 -- chamada: select marked(email);
 create function marked(
