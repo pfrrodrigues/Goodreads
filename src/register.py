@@ -108,7 +108,7 @@ def create_account():
     country = set_country(name)
 
     cur.execute("INSERT INTO leitor VALUES(%s, %s, %s, %s, %s,'1', %s);",
-                (email, name, password, sex,birth,country,))
+                (email, name, password, sex, birth, country,))
 
     # Upload the changes to the database
     conn.commit()

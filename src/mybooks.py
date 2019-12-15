@@ -190,7 +190,7 @@ def mybooks_page(email):
         books = cur.fetchall()
 
         if books:
-            t = PrettyTable(['Opção','Título','Autor','Tipo', 'Nota', 'Nota Media'])
+            t = PrettyTable(['Opção', 'Título', 'Autor', 'Tipo', 'Nota', 'Nota Media'])
 
             for book in books:
 

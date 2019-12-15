@@ -5,23 +5,17 @@
 -- 1 deve usar o NOT EXIST
 -- 2 devem utilizar a visão que criarmos ✓, ✓
 
--- IDEIAS:
+-- Seleciona isbn, titulo, imagem, autor, e nota de um livro
+select livro.isbn, livro.titulo, livro.imagem, e.nome, leitura.tipo as marcacao, leitura.classificacao as nota
+from leitor l
+join leitura on (l.email=fk_leitor_email)
+join livro on (fk_livro_isbn=isbn)
+join escrita on (livro.isbn=escrita.fk_livro_isbn)
+join leitor e on (escrita.fk_leitor_email=e.email)
+-- se dermos o parametro da isbn
+-- where livro.isbn = %s;
 
- -- 1) Consulta de Notas média dos livros de cada autor
- -- 2) Saber quantas pessoas participam de eventos de um autor
- -- 3) Saber o livro mais lido de cada leitor
- -- 4) 
- -- 5) Pesquisar qual o livro mais lido de cada leitor
- -- 6) Pesquisar quais os livros mais lidos de um grupo
- -- 7) Saber qual a lista mais visitada
- -- 8) Descobrir quais livros sao os mais desejados
---  9)O escritor mais lido
-
- -- OBS: aqui estao ideias que @ArthurCamargo pensou que seriam uteis
---  e que sao relativamente mais complexas, qualquer reclamacao fique a
---  vontade para alterar, modificar e excluir
-
--- 1) Consulta de Notas média dos livros de cada autor
+--  Consulta de Notas média dos livros de cada autor
 SELECT escrita.fk_leitor_email, livro.titulo, AVG(CAST(classificacao AS INT))
 FROM leitor JOIN escrita
 ON(leitor.email = escrita.fk_leitor_email)
@@ -32,7 +26,7 @@ ON(escrita.fk_livro_ISBN = ISBN)
 GROUP BY escrita.fk_leitor_email, livro.titulo
 HAVING COUNT(CAST( classificacao AS INT)) >= 1;
 
--- 2) Saber quantas pessoas participam de eventos de um autor
+-- Saber quantas pessoas participam de eventos de um autor
 SELECT leitor.nome, evento.descricao,  COUNT(DISTINCT fk_leitor_email_)
 FROM evento JOIN leitor
 ON (evento.fk_leitor_email = leitor.email)
@@ -40,10 +34,7 @@ JOIN participacao
 ON (participacao.fk_leitor_email = evento.fk_leitor_email_)
 GROUP BY leitor.nome, evento.descricao
 
--- 3) Saber o genero mais lido de cada leitor
-
-
- -- 5) Saber o livro mais lido de cada autor 
+ -- Saber o livro mais lido de cada autor 
 SELECT leitor.nome, livro.titulo, COUNT(livro.isbn)
 FROM leitor
 JOIN escrita ON (fk_leitor_email = email)
@@ -61,7 +52,7 @@ HAVING (leitor.email , COUNT(leitura.fk_livro_isbn)) IN
     GROUP BY le)
 
 
--- 9)retorna o top 10  escritores mais lidos
+-- retorna o top 10  escritores mais lidos
 select leitor.nome, count(classificacao::int) as nmr_leituras
 from ((leitor join escrita on (email=FK_Leitor_email))
 join livro on(FK_Livro_ISBN=isbn)) join leitura on(isbn=leitura.FK_Livro_ISBN)
@@ -69,6 +60,14 @@ where leitura.tipo = 'L'
 group by leitor.nome
 order by nmr_leituras desc limit 10;
 
+-- retorna as tags de uma dada lista
+SELECT tagl FROM lista
+JOIN posse_tagl ON (lista.codlista = posse_tagl.fk_lista_codlista)
+JOIN tag_lista ON (posse_tagl.fk_tag_lista_codtagl)
+-- WHERE fk_leitor_email = %s AND lista.nome =
+-- Para ter os parametros do leitor e de suas listas
+
+-- )
 
 -- VIEWS
 CREATE VIEW leitor_livros AS
@@ -88,14 +87,21 @@ FROM leitor_livros
 GROUP BY leitor_livros.nome;
 -- Se quisermos setar um minimo de classificacoes
 -- HAVING COUNT(leitor_livros.classificacao::int) > 10;
-              
-        
 
 
 
 
 
 -- FUNCTIONS
+create function book_util(
+    isbn char
+)
+returns table(isbn char, titulo varchar, imagem varchar, nome varchar, tipo char, nota char) as $$
+select livro.isbn, livro.titulo, livro.imagem, e.nome, leitura.tipo as marcacao, leitura.classificacao as nota
+from (((leitor l join leitura on (l.email=fk_leitor_email)) join livro on (fk_livro_isbn=isbn))
+    join escrita on (livro.isbn=escrita.fk_livro_isbn)) join leitor e on (escrita.fk_leitor_email=e.email)
+where livro.isbn = isbn;
+$$ language sql;
               
 -- retorna os livros de um autor
 create function search_author_books(
@@ -145,8 +151,8 @@ returns table(isbn char, titulo varchar, imagem varchar, nome varchar, tipo char
     join escrita on (livro.isbn=escrita.fk_livro_isbn)) join leitor e on (escrita.fk_leitor_email=e.email)
     where l.email = user_email;
 $$ language sql;
-                     
-                     
+
+
 -- retorna a media de um determinado livro
 create function avg_rating(
   isbn char
@@ -156,9 +162,8 @@ returns table(media float) as $$
   from leitura
   where tipo='L' and fk_livro_isbn=isbn;
   $$ language sql;
-                     
-                     
-                     
+
+
 -- mostra todas as informacoes de um livro
 create function info_book(
   book_isbn char
@@ -174,10 +179,4 @@ formato varchar, autor varchar, genero varchar) as $$
         join genero on (posse_genero.FK_Genero_codGenero=genero.codGenero))
   where livro.isbn = book_isbn;
   $$ language sql;
-                        
-                        
-  
-                                                 
-                                                 
-                                                 
 

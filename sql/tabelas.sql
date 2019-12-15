@@ -96,7 +96,7 @@ CREATE TABLE Endereco (
     PRIMARY KEY (codEnd)
 );
 
-CREATE TABLE formato (
+CREATE TABLE FORMATO (
     formato_PK SERIAL,
     formato VARCHAR(20),
     PRIMARY KEY(formato_PK)
@@ -106,7 +106,6 @@ CREATE TABLE AMIZADE (
     FK_Leitor_email VARCHAR(100),
     FK_Leitor_email_ VARCHAR(100)
 );
-
 
 CREATE TABLE ESCRITA (
     FK_Leitor_email VARCHAR(100),

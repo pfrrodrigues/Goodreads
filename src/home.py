@@ -53,23 +53,26 @@ def home(userdata):
 
     # Execute the program while the user don't press quit(7)
     while logged:
-
         section = input(my_books+'\n'+search_books+'\n'+lists+'\n'+groups+'\n'+friends+'\n'+events+'\n'+profile+'\n'+quit+'\n>> ')
 
         if section == '1':
             mb.mybooks_page(userdata[0])
         elif section == '2':
-            sb.searchbooks_page()
+            pass
+            #sb.searchbooks_page()
         elif section == '3':
-            l.lists_page()
+            l.lists_page(userdata)
         elif section == '4':
-            gp.groups_page()
+            pass
+            #gp.groups_page()
         elif section == '5':
-            fr.friends_page()
+            pass
+            #fr.friends_page()
         elif section == '6':
-            ev.events_page()
+            pass
+            #ev.events_page()
         elif section == '7':
-            pf.profile_page()
+            pf.profile_page(userdata[0])
         elif section == '8':
             logged = False
         else:
