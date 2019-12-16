@@ -259,7 +259,7 @@ def create_new_list(current_user, conn, cursor):
 
         while(choosing):
             msg = "Quais serão os livros da sua lista, digite um nome para adicionar:" + new_line + ">>"
-            livro_nome = input(msg)
+            livro_nome = (input(msg)).title()
             add_isbn = pesquisar_livros(livro_nome, cursor)
 
             add_book_lista(add_isbn, codlista, conn, cursor)
@@ -474,23 +474,27 @@ def show_your_lists(num_itens, current_user, conn, cursor):
 
         print(t) #Printa lista
 
-        msg = "Voce gostaria de:" + new_line
-        new = "[1] Criar uma nova lista" + new_line
-        edit = "[2] Editar uma lista" + new_line
-        quit = "[3] Voltar" + new_line + '>>'
+        while True:
+            msg = "Voce gostaria de:" + new_line
+            new = "[1] Criar uma nova lista" + new_line
+            edit = "[2] Editar uma lista" + new_line
+            quit = "[3] Voltar" + new_line + '>>'
 
-        msg += new + edit + quit
+            msg += new + edit + quit
 
-        section = input(msg)
+            section = input(msg)
 
-        if section == '1':
-            create_new_list(current_user, conn, cursor)
-        elif section == '2':
-            codlista = choose_lists(your_lists)
-            edit_lists_menu(codlista, conn, cursor)
-        else:
-            logged = False
-        os.system('clear')
+            if section == '1':
+                create_new_list(current_user, conn, cursor)
+            elif section == '2':
+                codlista = choose_lists(your_lists)
+                edit_lists_menu(codlista, conn, cursor)
+            elif section == '3':
+                logged = False
+                break
+            else:
+                continue
+            os.system('clear')
 
 def lists_page(current_user):
     """ Implements page of lists """
@@ -499,7 +503,7 @@ def lists_page(current_user):
     conn = psycopg2.connect(host='127.0.0.1',
                             password='12345',
                             user='postgres',
-                            dbname='actual')
+                            dbname='GOODREADS')
     logged = True
 
     while(logged):
