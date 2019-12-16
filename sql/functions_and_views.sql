@@ -25,21 +25,21 @@ CREATE VIEW show_groups
 -- ::::::::::::::::: FUNCTIONS :::::::::::::::::::
 
 -- retorna os livros de um autor
-create function search_author_books(
+create or replace function search_author_books(
   author varchar
 )
-returns table(nome varchar) as $$
-select livro.titulo from (leitor join escrita on(email=FK_Leitor_email)) join livro on(FK_Livro_ISBN=isbn)
+returns table(isbn char, titulo varchar) as $$
+select livro.isbn, livro.titulo from (leitor join escrita on(email=FK_Leitor_email)) join livro on(FK_Livro_ISBN=isbn)
 where leitor.nome = author;
 $$ language sql;
 
 
 -- retorna livros de um determinado genero
-create function search_for_genre(
+create or replace function search_for_genre(
   genre varchar
 )
-returns table(titulo varchar) as $$
-  select livro.titulo
+returns table(isbn char, titulo varchar) as $$
+  select livro.isbn, livro.titulo
     from (livro join posse_genero on(isbn=FK_Livro_ISBN)) join genero on(FK_Genero_codGenero=codGenero)
     where genero.nome = genre;
 $$ language sql;
@@ -56,7 +56,7 @@ create view lancamento_editorial
 
 -- retorna os livros marcados por um leitor
 -- chamada: select marked(email);
-create function marked(
+create or replace function marked(
   user_email varchar
 )
 returns table(isbn char, titulo varchar, imagem varchar, nome varchar, tipo char, nota char) as $$
