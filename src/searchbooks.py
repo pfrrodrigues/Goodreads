@@ -46,8 +46,6 @@ def mark_book(email, isbn):
         t = PrettyTable(['Título','Autor','Gênero', 'Ano de Publicação',
                          'Páginas','Formato', 'Media Nota'])
 
-        print(book_information)
-
         t.add_row([book_information[0][1], book_information[0][7],
                    book_information[0][8], book_information[0][2],
                    book_information[0][5],book_information[0][6], "{:.2f}".format(avg_rating[0])])
