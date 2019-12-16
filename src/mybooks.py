@@ -38,7 +38,6 @@ def select_book(email, book):
     marking = "[2] Alterar marcação do livro"
     rtrn = "[3] Voltar"
 
-
     # Colects the extra information of the book
     cur.execute("SELECT * FROM info_book(%s)", (book[0],))
     book_information = cur.fetchall()
@@ -87,7 +86,7 @@ def select_book(email, book):
         option = input(description+'\n'+marking+'\n'+rtrn+'\n>> ')
 
         if int(option) < 1 or int(option) > 3:
-            option = input(description+'\n'+marking+'\n'+rtrn+'\n>> ')
+            continue
         else:
             # Print description
             if option == '1':
@@ -145,12 +144,12 @@ def select_book(email, book):
 
                     while True:
                         if type == 'D':
-                            cur.execute("UPDATE leitura SET tipo = 'D', classificacao = 0 WHERE fk_leitor_email=%s and fk_livro_isbn=%s;",
+                            cur.execute("UPDATE leitura SET tipo = 'D' WHERE fk_leitor_email=%s and fk_livro_isbn=%s;",
                             (email,book[0],))
                             conn.commit()
                             break
                         elif type == 'A':
-                            cur.execute("UPDATE leitura SET tipo = 'A', classificacao = 0 WHERE fk_leitor_email=%s and fk_livro_isbn=%s;",
+                            cur.execute("UPDATE leitura SET tipo = 'A' WHERE fk_leitor_email=%s and fk_livro_isbn=%s;",
                             (email,book[0],))
                             conn.commit()
                             break
@@ -177,7 +176,7 @@ def mybooks_page(email):
     cur = conn.cursor()
 
     msg_info_books = "Para ver mais informacoes de um de seus livros entre com seu codigo de selecao correspondente."
-    msg_return = "Voltar."
+    msg_return = "Voltar"
     processing = True
 
     while processing:
@@ -190,7 +189,7 @@ def mybooks_page(email):
         books = cur.fetchall()
 
         if books:
-            t = PrettyTable(['Opção', 'Título', 'Autor', 'Tipo', 'Nota', 'Nota Media'])
+            t = PrettyTable(['Opção','Título','Autor','Tipo', 'Nota', 'Nota Media'])
 
             for book in books:
 
@@ -231,8 +230,14 @@ def mybooks_page(email):
         else:
             print("Nenhum livro na lista.")
 
-            option = input('\n\n' + str(counter_books) + '. ' + msg_return + '\n>> ')
+            while True:
+                option = input('\n\n[' + str(counter_books) + '] ' + msg_return + '\n>> ')
 
+                if int(option) == counter_books:
+                    break
+                else:
+                    continue
+            break
 
     conn.close()
     cur.close()
