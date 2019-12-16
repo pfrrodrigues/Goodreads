@@ -73,7 +73,7 @@ def add_friend(email):
                             if int(option) == counter_friends:
                                 break
                             else:
-                                cur.execute("SELECT FK_Leitor_email_ FROM amizade WHERE FK_Leitor_email_ = %s", (new_friends[int(option)-1][1],))
+                                cur.execute("SELECT FK_Leitor_email_ FROM amizade WHERE FK_Leitor_email_ =%s and fk_leitor_email=%s", (new_friends[int(option)-1][1],email,))
                                 is_friend = cur.fetchone()
 
                                 if is_friend:
@@ -83,7 +83,7 @@ def add_friend(email):
                                     cur.execute("INSERT INTO amizade VALUES(%s,%s);", (email, new_friends[int(option)-1][1],))
                                     conn.commit()
 
-                                    cur.execute("SELECT FK_Leitor_email_ FROM amizade WHERE FK_Leitor_email_ = %s;", (new_friends[int(option)-1][1],))
+                                    cur.execute("SELECT FK_Leitor_email_ FROM amizade WHERE FK_Leitor_email_ = %s and fk_leitor_email=%s;", (new_friends[int(option)-1][1],email))
                                     test_add = cur.fetchone()
 
                                     if test_add:
@@ -120,7 +120,7 @@ def add_friend(email):
                             if int(option) == counter_friends:
                                 break
                             else:
-                                cur.execute("SELECT FK_Leitor_email_ FROM amizade WHERE FK_Leitor_email_ = %s", (new_friends[int(option)-1][1],))
+                                cur.execute("SELECT FK_Leitor_email_ FROM amizade WHERE FK_Leitor_email_ = %s and fk_leitor_email=%s", (new_friends[int(option)-1][1],email,))
                                 is_friend = cur.fetchone()
 
                                 if is_friend:
@@ -130,7 +130,7 @@ def add_friend(email):
                                     cur.execute("INSERT INTO amizade VALUES(%s,%s);", (email, new_friends[int(option)-1][1],))
                                     conn.commit()
 
-                                    cur.execute("SELECT FK_Leitor_email_ FROM amizade WHERE FK_Leitor_email_ = %s;", (new_friends[int(option)-1][1],))
+                                    cur.execute("SELECT FK_Leitor_email_ FROM amizade WHERE FK_Leitor_email_ = %s and fk_leitor_email = %s;", (new_friends[int(option)-1][1],email,))
                                     test_add = cur.fetchone()
 
                                     if test_add:
