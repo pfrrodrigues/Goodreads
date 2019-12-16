@@ -25,6 +25,7 @@ import friends as fr
 import profile as pf
 import searchbooks as sb
 import events as ev
+import statistic as st
 
 def home(userdata):
     """ Implements the homepage of system """
@@ -39,7 +40,7 @@ def home(userdata):
     lists = "[3] Listas"
     groups = "[4] Grupos"
     friends = "[5] Amigos"
-    events = "[6] Eventos"
+    statistics = "[6] Estatísticas"
     profile = "[7] Perfil"
     quit = "[8] Sair"
 
@@ -53,24 +54,20 @@ def home(userdata):
 
     # Execute the program while the user don't press quit(7)
     while logged:
-        section = input(my_books+'\n'+search_books+'\n'+lists+'\n'+groups+'\n'+friends+'\n'+events+'\n'+profile+'\n'+quit+'\n>> ')
+        section = input(my_books+'\n'+search_books+'\n'+lists+'\n'+groups+'\n'+friends+'\n'+statistics+'\n'+profile+'\n'+quit+'\n>> ')
 
         if section == '1':
             mb.mybooks_page(userdata[0])
         elif section == '2':
-            pass
-            #sb.searchbooks_page()
+            sb.searchbooks_page(userdata[0])
         elif section == '3':
             l.lists_page(userdata)
         elif section == '4':
-            pass
-            #gp.groups_page()
+            gp.groups_page(userdata)
         elif section == '5':
-            pass
-            #fr.friends_page()
+            fr.friends_page(userdata[0])
         elif section == '6':
-            pass
-            #ev.events_page()
+            st.stats_page(userdata)
         elif section == '7':
             pf.profile_page(userdata[0])
         elif section == '8':

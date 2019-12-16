@@ -247,9 +247,15 @@ def create_new_list(current_user, conn, cursor):
         os.system('clear')
 
         for tag in tags:
-            cursor.execute("INSERT into tag_lista(tagl) VALUES (%s) RETURNING codtagl", (tag,))
-            conn.commit()
+
+            cursor.execute("SELECT codtagl FROM tag_lista WHERE tagl = %s ", (tag,))
             codtagl = cursor.fetchone()
+
+            if not codtagl:
+                cursor.execute("INSERT into tag_lista(tagl) VALUES (%s) RETURNING codtagl", (tag,))
+                conn.commit()
+                codtagl = cursor.fetchone()
+
             cursor.execute("INSERT into posse_tagl VALUES (%s, %s)", (codlista, codtagl,))
             conn.commit()
 
@@ -323,42 +329,6 @@ def delete_lists(lists, conn, cursor):
     print("Lista deletada com sucesso ...")
     input()
 
-def alter_lists(lists, conn, cursor):
-    """ Altera uma dada lista """
-
-    logged = True
-    new_line = '\n'
-
-    msg = "Voce deseja:" + new_line
-    nome = "[1] Alterar o nome da lista" + new_line
-    tags = "[2] Alterar as tags da lista" + new_line
-    livros = "[3] Alterar os livros da lista" + new_line
-    quit ="[q] Voltar" + new_line + ">>"
-
-    msg += nome
-    msg += tags
-    msg += livros
-    msg += quit
-
-
-    while(logged):
-        print_lista(lists, cursor)
-        opt = input(msg)
-        if opt == 'q':
-            logged = False
-        elif opt == '1':
-            pass
-            #alter_nome(lists)
-        elif opt == '2':
-            pass
-            #alter_tags(lists)
-        elif opt == '3':
-            pass
-            #alter_livros(lists)
-        else:
-            print("Commando inválido" + new_line)
-    pass
-
 def print_lista(lists, cursor):
     """ imprime uma lista dado seu codlista """
 
@@ -408,11 +378,9 @@ def edit_lists_menu(lists, conn, cursor):
 
     msg = "Voce deseja:" + new_line
     delete = "[1] Deletar essa lista" + new_line
-    modify = "[2] Modificar essa lista" + new_line
     quit ="[q] Voltar" + new_line + ">>"
 
     msg += delete
-    msg += modify
     msg += quit
 
     while(logged):
@@ -425,8 +393,6 @@ def edit_lists_menu(lists, conn, cursor):
         elif opt == '1':
             delete_lists(lists, conn, cursor)
             logged = False
-        elif opt == '2':
-            alter_lists(lists, conn, cursor)
         else:
             print("Commando inválido" + new_line)
 
